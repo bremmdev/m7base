@@ -2,12 +2,22 @@
   "name": "m7base",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/m7base.css",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prebuild": "mkdir -p dist",
+    "build": "lightningcss --bundle --minify --targets \"defaults, not IE 11\" styles/index.css --output-dir dist && mv dist/index.css dist/m7base.css",
+    "prebuild:dev": "mkdir -p dist",
+    "build:dev": "lightningcss --bundle --targets \"defaults, not IE 11\" styles/index.css --output-dir dist && mv dist/index.css dist/m7base.css",
+    "build:watch": "mkdir -p dist && lightningcss --bundle --minify --watch --targets \"defaults, not IE 11\" styles/index.css --output-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "devDependencies": {
+    "lightningcss-cli": "^1.27.0"
+  }
 }
