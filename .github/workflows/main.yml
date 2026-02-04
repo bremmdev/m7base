@@ -1,0 +1,60 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write # Required for OIDC, allows GitHub Actions to generate OIDC tokens
+  contents: read
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Check if version is already published
+        id: version-check
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "Package: $PACKAGE_NAME@$PACKAGE_VERSION"
+
+          # Check if package exists and get published version (returns empty if package doesn't exist)
+          PUBLISHED_VERSION=$(npm view "$PACKAGE_NAME" version 2>&1 || true)
+          
+          # If the output contains "404" or "not found", the package doesn't exist yet
+          if echo "$PUBLISHED_VERSION" | grep -qi "404\|not found\|E404"; then
+            echo "Package doesn't exist on npm yet - first publish"
+            PUBLISHED_VERSION=""
+          fi
+          
+          echo "Published version: $PUBLISHED_VERSION"
+
+          if [ "$PACKAGE_VERSION" = "$PUBLISHED_VERSION" ]; then
+            echo "Version $PACKAGE_VERSION is already published, skipping publish"
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "Version $PACKAGE_VERSION is not published yet"
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+          fi
+
+        # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        if: steps.version-check.outputs.should_publish == 'true'
+        run: npm install -g npm@latest
+      - name: Install dependencies
+        if: steps.version-check.outputs.should_publish == 'true'
+        run: npm ci
+      - name: Build
+        if: steps.version-check.outputs.should_publish == 'true'
+        run: npm run build
+      - name: Publish to npm
+        if: steps.version-check.outputs.should_publish == 'true'
+        run: npm publish --access public
