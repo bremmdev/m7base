@@ -1,0 +1,33 @@
+label {
+    display: block;
+    margin-block: var(--spacing-2);
+    font-weight: 500;
+}
+
+input,
+textarea,
+select {
+    border: 1px solid var(--color-border);
+    border-radius: var(--spacing-1);
+    padding: var(--spacing-1) var(--spacing-2);
+    display: block;
+
+    &:focus {
+        outline: 2px solid var(--color-foreground);
+        outline-offset: 2px;
+    }
+}
+
+button {
+    padding: var(--spacing-2) var(--spacing-4);
+    background-color: var(--color-foreground);
+    color: var(--color-foreground-inverted);
+    font-weight: 700;
+    border-radius: var(--spacing-1);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-foreground-hover);
+        transition: background-color 0.2s ease-in-out
+    }
+}
