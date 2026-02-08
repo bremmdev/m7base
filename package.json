@@ -1,7 +1,7 @@
 {
   "name": "@bremmdev/m7base",
   "description": "A CSS library that gives websites a quick styling with modern CSS resets, base styles and optional component class styles.",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -16,10 +16,12 @@
     "dist"
   ],
   "scripts": {
+    "generate:utilities": "node scripts/generate-utilities.js",
+    "prebuild": "npm run generate:utilities",
+    "prebuild:dev": "npm run generate:utilities && mkdir -p dist",
     "build": "lightningcss --bundle --minify --targets \"defaults, not IE 11\" styles/index.css --output-dir dist && mv dist/index.css dist/m7base.css",
-    "prebuild:dev": "mkdir -p dist",
     "build:dev": "lightningcss --bundle --targets \"defaults, not IE 11\" styles/index.css --output-dir dist && mv dist/index.css dist/m7base.css",
-    "build:watch": "mkdir -p dist && lightningcss --bundle --minify --watch --targets \"defaults, not IE 11\" styles/index.css --output-dir dist",
+    "build:watch": "npm run generate:utilities && mkdir -p dist && lightningcss --bundle --minify --watch --targets \"defaults, not IE 11\" styles/index.css --output-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

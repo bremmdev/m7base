@@ -11,11 +11,6 @@ select {
     border-radius: var(--spacing-1);
     padding: var(--spacing-1) var(--spacing-2);
     display: block;
-
-    &:focus {
-        outline: 2px solid var(--color-foreground);
-        outline-offset: 2px;
-    }
 }
 
 button {
@@ -23,11 +18,22 @@ button {
     background-color: var(--color-foreground);
     color: var(--color-foreground-inverted);
     font-weight: 700;
-    border-radius: var(--spacing-1);
+    border-radius: var(--spacing-2);
     cursor: pointer;
 
-    &:hover {
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover:not(:disabled) {
         background-color: var(--color-foreground-hover);
-        transition: background-color 0.2s ease-in-out
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-foreground);
+        outline-offset: 2px;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 }

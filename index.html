@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form style="padding: var(--spacing-4);">
+    <form class="p-4">
       <div class="form-control">
       <label for="name">Name</label>
       <input type="text" id="name" name="name">
@@ -33,5 +33,22 @@
       <button type="button">Cancel</button>
     </div>
     </form>
+
+    <h3>Buttons</h3>
+    <div class="flex gap-4 p-4">
+      <button>Default</button>
+      <button class="btn-outline">Outline</button>
+      <button class="btn-primary">Primary</button>
+      <button class="btn-primary-outline">Primary Outline</button>
+      <button class="btn-destructive">Destructive</button>
+    </div>
+
+    <div class="flex gap-4 p-4">
+      <button disabled>Default</button>
+      <button class="btn-outline" disabled>Outline</button>
+      <button class="btn-primary" disabled >Primary</button>
+      <button class="btn-primary-outline" disabled>Primary Outline</button>
+      <button class="btn-destructive" disabled>Destructive</button>
+    </div>
 </body>
 </html>
