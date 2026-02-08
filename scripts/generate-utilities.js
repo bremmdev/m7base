@@ -3,7 +3,7 @@
 /**
  * Generate utilities.css file
  * 
- * This script generates all margin, padding, and gap utility classes (0-16)
+ * This script generates all margin, padding, gap, and typography utility classes
  * to reduce repetition and make maintenance easier.
  * 
  * Additionally, it generates some classes for flexbox.
@@ -78,8 +78,37 @@ output += `.flex {
     align-items: center;
     justify-content: space-between;
 }
+
+.items-center {
+    align-items: center;
+}
     
 `;	
+
+
+// Text utilities
+
+output += `.text-accent {
+    color: var(--color-accent);
+}
+
+.bg-accent {
+    background-color: var(--color-accent);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+`;
 
 // Margin auto classes
 output += `.mx-auto {
@@ -161,6 +190,60 @@ output += generateUtilities('pr', 'padding-right');
 output += generateUtilities('gap', 'gap');
 output += generateUtilities('gap-x', 'column-gap');
 output += generateUtilities('gap-y', 'row-gap');
+
+// Text size utilities
+output += `.text-xs {
+    font-size: var(--text-xs);
+}
+
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.text-base {
+    font-size: var(--text-base);
+}
+
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+.text-xl {
+    font-size: var(--text-xl);
+}
+
+.text-2xl {
+    font-size: var(--text-2xl);
+}
+
+.text-3xl {
+    font-size: var(--text-3xl);
+}
+
+.text-4xl {
+    font-size: var(--text-4xl);
+}
+
+.text-5xl {
+    font-size: var(--text-5xl);
+}
+
+`;
+
+// Font weight utilities
+output += `.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+`;
 
 // Write to file
 const outputPath = path.join(__dirname, '..', 'styles', 'utilities.css');

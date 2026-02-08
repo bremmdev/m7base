@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="bg-grid"></div>
+  <header class="page-container py-4">
+    <span class="text-2xl font-bold">M7BASE</span>
+  </header>
+  <main class="page-container">
+
+    <h1 class="text-center my-16 font-normal title">Drop-in CSS stylesheet for <span class="text-accent">quick
+        styling</span>
+      based on
+      modern CSS features and optional
+      <span class="text-accent">
+        components</span>.
+    </h1>
+
+
+    <section class="text-center">
+      <h2 class="text-accent">Headings</h2>
+      <div class="flex flex-col gap-2 mt-8">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 3</h4>
+      </div>
+    </section>
+    <section>
+      <h2 class="text-accent text-center">Form and inputs</h2>
+      <form class="p-4 flex flex-col items-center constrained">
+        <div class="form-control">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="form-control">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <div class="form-control">
+          <label for="country">Country</label>
+          <select name="country" id="country">
+            <option value="usa">USA</option>
+            <option value="germany">Germany</option>
+            <option value="spain">Spain</option>
+          </select>
+        </div>
+      </form>
+    </section>
+    <section class="text-center">
+      <h2 class="text-accent">Buttons</h2>
+
+      <div class="flex gap-4 p-4 flex-center my-4 flex-wrap">
+        <button>Default</button>
+        <button class="btn-outline">Outline</button>
+        <button class="btn-primary">Primary</button>
+        <button class="btn-primary-outline">Primary Outline</button>
+        <button class="btn-destructive">Destructive</button>
+      </div>
+
+      <h3 class="text-accent mt-8">Disabled buttons</h3>
+
+      <div class="flex gap-4 p-4 flex-center my-4 flex-wrap">
+        <button disabled>Default</button>
+        <button class="btn-outline" disabled>Outline</button>
+        <button class="btn-primary" disabled>Primary</button>
+        <button class="btn-primary-outline" disabled>Primary Outline</button>
+        <button class="btn-destructive" disabled>Destructive</button>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

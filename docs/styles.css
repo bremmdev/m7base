@@ -1,0 +1,28 @@
+body {
+    min-height: 100vh;
+    padding-bottom: 10rem;
+}
+
+.bg-grid {
+    background-image: linear-gradient(45deg, transparent 49%, #f9fafb 49%,
+            #f9fafb 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, #f9fafb 49%, #f9fafb 51%, transparent 51%);
+    background-size: 60px 60px;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.title {
+    max-width: 70rem;
+    margin-inline: auto;
+}
+
+.constrained {
+    max-width: 70rem;
+    margin-inline: auto;
+}
+
+section {
+    margin-top: 2rem;
+}
