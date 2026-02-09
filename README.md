@@ -70,6 +70,18 @@ Use `page-container` to center content with a max-width:
 </main>
 ```
 
+#### Card
+
+Use the `card` class to create a container with padding, border, and rounded corners:
+
+```html
+<!-- Basic card -->
+<div class="card">
+  <h3>Card Title</h3>
+  <p>Card content goes here.</p>
+</div>
+```
+
 ### Utilities
 
 #### Spacing
