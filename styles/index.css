@@ -55,6 +55,7 @@
         --text-4xl: 3rem;
         --text-5xl: 4rem;
         --page-content-width: 90rem;
+        --line-height: 1.5;
 }
 
 body {

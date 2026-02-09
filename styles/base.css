@@ -38,8 +38,13 @@ textarea,
 select {
     border: 1px solid var(--color-border);
     border-radius: var(--spacing-1);
-    padding: var(--spacing-1) var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
     display: block;
+}
+
+textarea {
+    /*  base font-size times line-height plus padding */
+    min-height: calc((var(--text-base) * var(--line-height)) + (var(--spacing-2) * 2));
 }
 
 button {

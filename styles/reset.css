@@ -29,7 +29,7 @@
 
 html,
 :host {
-    line-height: 1.5;
+    line-height: var(--line-height);
     /* WCAG criterion 1.4.12 */
     -webkit-text-size-adjust: 100%;
     /* Prevent adjustments of font size after orientation changes in iOS */
