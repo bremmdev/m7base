@@ -1,6 +1,10 @@
-### 0.2.0 - 2026-02-09
+## 0.3.0 - 2026-02-10
 
-- Add heading
+- Add badge
+
+## 0.2.0 - 2026-02-09
+
+- Add headings
 - Add text and flexbox utils
 - Add card component
 

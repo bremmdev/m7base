@@ -13,6 +13,12 @@ body {
     pointer-events: none;
 }
 
+.hero-section {
+    background-color: oklch(from var(--color-accent) l c h / 0.1);
+    padding: var(--spacing-16);
+    margin-block: 0 4rem;
+}
+
 .title {
     max-width: 70rem;
     margin-inline: auto;
@@ -24,5 +30,5 @@ body {
 }
 
 section {
-    margin-top: 2rem;
+    margin-top: 3rem;
 }

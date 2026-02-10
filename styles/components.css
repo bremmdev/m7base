@@ -105,3 +105,21 @@
     border: 1px solid var(--color-border);
     padding: var(--spacing-4);
 }
+
+.badge {
+    padding: var(--spacing-1) var(--spacing-3);
+    background-color: var(--color-badge);
+    width: fit-content;
+    border-radius: 100vw;
+
+    &.badge-outline {
+        background-color: transparent;
+        border: 1px solid var(--color-border);
+        color: var(--color-foreground);
+    }
+
+    &.badge-primary {
+        background-color: var(--color-accent);
+        color: var(--color-foreground-inverted);
+    }
+}

@@ -24,6 +24,21 @@ m7base provides:
 
 ### Components
 
+#### Badge
+
+Use the `badge` class to create small labels or tags for categories, status indicators, or counts:
+
+```html
+<!-- Default badge -->
+<span class="badge">Default</span>
+
+<!-- Outline badge -->
+<span class="badge badge-outline">Outline</span>
+
+<!-- Primary badge -->
+<span class="badge badge-primary">Primary</span>
+```
+
 #### Buttons
 
 m7base provides several button styles:
@@ -47,6 +62,18 @@ m7base provides several button styles:
 
 Customize the primary button by overriding the CSS variable `--color-accent`.
 
+#### Card
+
+Use the `card` class to create a container with padding, border, and rounded corners:
+
+```html
+<!-- Basic card -->
+<div class="card">
+  <h3>Card Title</h3>
+  <p>Card content goes here.</p>
+</div>
+```
+
 #### Forms
 
 Use the `form-control` class to group labels and inputs and give them some basic styling:
@@ -68,18 +95,6 @@ Use `page-container` to center content with a max-width:
 <main class="page-container">
   <!-- Your content here -->
 </main>
-```
-
-#### Card
-
-Use the `card` class to create a container with padding, border, and rounded corners:
-
-```html
-<!-- Basic card -->
-<div class="card">
-  <h3>Card Title</h3>
-  <p>Card content goes here.</p>
-</div>
 ```
 
 ### Utilities
