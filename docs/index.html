@@ -17,19 +17,50 @@
   <main>
 
     <section class="hero-section">
-      < <h1 class="text-center my-16 font-normal title">Drop-in CSS stylesheet for <span class="text-accent">quick
+      <h1 class="text-center my-16 font-normal title">Drop-in CSS stylesheet for <span class="text-accent">quick
           styling</span>
         based on
         modern CSS features and optional
         <span class="text-accent">
           components</span>.
-        </h1>
+      </h1>
     </section>
 
     <div class="page-container">
 
       <section class="text-center">
-        <h2 class="text-accent">Badge</h2>
+        <h2 class="text-accent text-center">Accordion</h2>
+
+        <p class="my-8">This works with the native <code class="font-bold">details</code> and <code
+            class="font-bold">summary</code> elements. No classes
+          need to be
+          added</p>
+
+        <pre><code>&lt;details&gt;
+  &lt;summary&gt;This is the title of the accordion&lt;/summary&gt;
+  &lt;p&gt;This is the content of the accordion. It can be as long as you want.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+
+        <details class="mt-8">
+          <summary>This is the title of the accordion</summary>
+          <p>This is the content of the accordion. It can be as long as you want.</p>
+        </details>
+        <details>
+          <summary>This is the title of the second accordion</summary>
+          <p>This is the content of the second accordion. It can be as long as you want.</p>
+        </details>
+
+
+      </section>
+
+      <section class="text-center">
+        <h2 class="text-accent text-center">Badge</h2>
+
+        <p class="my-8">Use the <code class="font-bold">badge</code> class to create a badge.</p>
+        <pre><code>&lt;div class="badge"&gt;Badge&lt;/div&gt;
+&lt;div class="badge badge-outline"&gt;Badge Outline&lt;/div&gt;
+&lt;div class="badge badge-primary"&gt;Badge Primary&lt;/div&gt;</code></pre>
+
         <div class="flex gap-4 p-4 flex-center my-4 flex-wrap">
           <div class="badge">Badge</div>
           <div class="badge badge-outline">Badge Outline</div>
@@ -38,7 +69,15 @@
       </section>
 
       <section class="text-center">
-        <h2 class="text-accent">Buttons</h2>
+        <h2 class="text-accent text-center">Buttons</h2>
+
+        <p class="my-8">Use the <code class="font-bold">btn</code> classes to create a button. If no class is added,
+          the button will be the default button based on the foreground color.</p>
+        <pre><code>&lt;button&gt;Default&lt;/button&gt;
+&lt;button class="btn-outline"&gt;Outline&lt;/button&gt;
+&lt;button class="btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn-primary-outline"&gt;Primary Outline&lt;/button&gt;
+&lt;button class="btn-destructive"&gt;Destructive&lt;/button&gt;</code></pre>
 
         <div class="flex gap-4 p-4 flex-center my-4 flex-wrap">
           <button>Default</button>
@@ -59,9 +98,16 @@
         </div>
       </section>
 
-      <section class="flex flex-col gap-4 items-center">
+      <section class="flex flex-col gap-4 items-center text-center">
         <h2 class="text-accent text-center">Card</h2>
-        <div class="card">
+        <p class="my-8">Use the <code class="font-bold">card</code> class to create a
+          card.</p>
+        <pre><code>&lt;div class="card"&gt;
+  &lt;h3&gt;Card Title&lt;/h3&gt;
+  &lt;p&gt;Card content goes here.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="card" style="text-align: left;">
           <h3>Card</h3>
           <p>By default the card is as wide as the content.</p>
           <p>Children are stacked vertically with a gap of 0.5rem.</p>
@@ -70,6 +116,14 @@
 
       <section class="text-center">
         <h2 class="text-accent">Headings</h2>
+        <p class="my-8">Use the <code class="font-bold">h1</code>, <code class="font-bold">h2</code>, <code
+            class="font-bold">h3</code>, and <code class="font-bold">h4</code> elements to create headings. The font
+          weight is set to 500.</p>
+        <pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;</code></pre>
+
         <div class="flex flex-col gap-2 mt-8">
           <h1>Heading 1</h1>
           <h2>Heading 2</h2>
@@ -78,13 +132,14 @@
         </div>
       </section>
 
-      <section>
+      <section class="text-center">
         <h2 class="text-accent text-center">Inputs</h2>
+        <p class="my-8">Use the <code class="font-bold">form-control</code> class to create a form control. Example:</p>
+        <pre><code>&lt;div class="form-control"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+&lt;/div&gt;</code></pre>
         <form class="p-4 flex flex-col items-center constrained">
-          <div class="form-control">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-          </div>
           <div class="form-control">
             <label for="email">Email</label>
             <input type="email" id="email" name="email">

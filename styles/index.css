@@ -29,6 +29,7 @@
                         var(--color-destructive) 90%,
                         white 10%);
         --color-border: oklch(37.2% 0.044 257.287);
+        --color-surface: oklch(98.4% 0.003 247.858);
         --color-badge: oklch(92.9% 0.013 255.508);
         --spacing-1: 0.25rem;
         --spacing-2: 0.5rem;

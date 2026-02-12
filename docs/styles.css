@@ -32,3 +32,10 @@ body {
 section {
     margin-top: 3rem;
 }
+
+pre,
+pre code {
+    display: block;
+    margin-inline: auto;
+    text-align: center;
+}

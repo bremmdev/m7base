@@ -1,6 +1,7 @@
-## 0.3.0 - 2026-02-10
+## 0.3.0 - 2026-02-12
 
 - Add badge
+- Add accordion (details/summary) styles
 
 ## 0.2.0 - 2026-02-09
 
