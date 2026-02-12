@@ -24,6 +24,17 @@ m7base provides:
 
 ### Components
 
+#### Accordion
+
+m7base provides styling for native HTML `<details>` and `<summary>` elements. No classes are needed - just use the semantic HTML elements:
+
+```html
+<details>
+  <summary>This is the title of the accordion</summary>
+  <p>This is the content of the accordion. It can be as long as you want.</p>
+</details>
+```
+
 #### Badge
 
 Use the `badge` class to create small labels or tags for categories, status indicators, or counts:
@@ -82,7 +93,7 @@ Use the `form-control` class to group labels and inputs and give them some basic
 <form>
   <div class="form-control">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" />
   </div>
 </form>
 ```
@@ -239,23 +250,35 @@ m7base uses CSS custom properties (variables) that you can override to customize
 :root {
   /* Colors */
   --color-foreground: oklch(13% 0.028 261.692);
-  --color-foreground-hover: color-mix(in oklch, var(--color-foreground) 80%, white 20%);
+  --color-foreground-hover: color-mix(
+    in oklch,
+    var(--color-foreground) 80%,
+    white 20%
+  );
   --color-foreground-inverted: oklch(1 0 0);
   --color-background: oklch(1 0 0);
   --color-accent: oklch(51.8% 0.253 323.949);
   --color-accent-hover: color-mix(in oklch, var(--color-accent) 90%, white 10%);
-  --color-accent-outline: color-mix(in oklch, var(--color-accent) 10%, white 90%);
+  --color-accent-outline: color-mix(
+    in oklch,
+    var(--color-accent) 10%,
+    white 90%
+  );
   --color-destructive: oklch(50.5% 0.213 27.518);
-  --color-destructive-hover: color-mix(in oklch, var(--color-destructive) 90%, white 10%);
+  --color-destructive-hover: color-mix(
+    in oklch,
+    var(--color-destructive) 90%,
+    white 10%
+  );
   --color-border: oklch(37.2% 0.044 257.287);
-  
+
   /* Spacing scale (0.25rem increments) */
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
   --spacing-4: 1rem;
   /* ... up to --spacing-16: 4rem */
-  
+
   /* Typography */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -266,7 +289,7 @@ m7base uses CSS custom properties (variables) that you can override to customize
   --text-3xl: 2rem;
   --text-4xl: 3rem;
   --text-5xl: 4rem;
-  
+
   /* Layout */
   --page-content-width: 90rem;
 }
@@ -320,6 +343,7 @@ m7base targets modern browsers:
 - Modern CSS features are automatically transformed for compatibility
 
 The library uses modern CSS features like:
+
 - CSS Custom Properties (CSS Variables)
 - CSS Layers (`@layer`)
 - `oklch()` color space
@@ -345,11 +369,13 @@ This project uses [Lightning CSS](https://lightningcss.dev) for bundling, minifi
 #### Browser Targets
 
 The build targets modern browsers with the following configuration:
+
 ```
 "defaults, not IE 11"
 ```
 
 This means:
+
 - Latest versions of major browsers
 - No Internet Explorer 11 support
 - Modern CSS features are transformed for compatibility
