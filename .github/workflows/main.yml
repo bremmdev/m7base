@@ -45,20 +45,31 @@ jobs:
         if: steps.version-check.outputs.should_publish == 'true'
         run: npm ci
       - name: Build
-        if: steps.version-check.outputs.should_publish == 'true'
         run: npm run build
       - name: Publish to npm
         if: steps.version-check.outputs.should_publish == 'true'
         run: npm publish --access public
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: |
+            ./docs
 
   azure_deploy_job:
     runs-on: ubuntu-latest
     name: Azure Deploy Job
+    needs: build-and-publish
+
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
           lfs: false
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
       - name: Azure Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
