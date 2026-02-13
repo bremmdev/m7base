@@ -13,6 +13,13 @@
   <div class="bg-grid"></div>
   <header class="page-container py-4">
     <span class="text-2xl font-bold">M7BASE</span>
+    <a href="https://github.com/bremmdev/m7base" target="_blank">GitHub Repo <svg xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link-icon lucide-external-link">
+        <path d="M15 3h6v6" />
+        <path d="M10 14 21 3" />
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      </svg></a>
   </header>
   <main>
 
@@ -115,10 +122,10 @@
       </section>
 
       <section class="text-center">
-        <h2 class="text-accent">Headings</h2>
+        <h2 class="text-accent">Headings and typography</h2>
         <p class="my-8">Use the <code class="font-bold">h1</code>, <code class="font-bold">h2</code>, <code
             class="font-bold">h3</code>, and <code class="font-bold">h4</code> elements to create headings. The font
-          weight is set to 500.</p>
+          weight is set to 500 and sizes are fluidly scaled between mobile and desktop.</p>
         <pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h2&gt;
 &lt;h3&gt;Heading 3&lt;/h3&gt;
@@ -128,13 +135,49 @@
           <h1>Heading 1</h1>
           <h2>Heading 2</h2>
           <h3>Heading 3</h3>
-          <h4>Heading 3</h4>
+          <h4>Heading 4</h4>
         </div>
+
+        <h3 class="text-accent mt-16">Font size classes</h3>
+        <p class="my-8">Use these utility classes to set font sizes. Sizes scale fluidly between mobile and desktop.</p>
+        <pre><code>&lt;p class="text-xs"&gt;Extra small&lt;/p&gt;
+&lt;p class="text-sm"&gt;Small&lt;/p&gt;
+&lt;p class="text-base"&gt;Base&lt;/p&gt;
+&lt;p class="text-lg"&gt;Large&lt;/p&gt;
+&lt;p class="text-xl"&gt;Extra large&lt;/p&gt;
+&lt;p class="text-2xl"&gt;2XL&lt;/p&gt;
+&lt;p class="text-3xl"&gt;3XL&lt;/p&gt;
+&lt;p class="text-4xl"&gt;4XL&lt;/p&gt;
+&lt;p class="text-5xl"&gt;5XL&lt;/p&gt;</code></pre>
+
+        <div class="flex flex-col gap-2 mt-8 text-center">
+          <p class="text-xs"><code class="text-sm">.text-xs</code> — 11.2px → 12px</p>
+          <p class="text-sm"><code class="text-sm">.text-sm</code> — 12.8px → 14px</p>
+          <p class="text-base"><code class="text-sm">.text-base</code> — 14.4px → 16px</p>
+          <p class="text-lg"><code class="text-sm">.text-lg</code> — 16px → 18px</p>
+          <p class="text-xl"><code class="text-sm">.text-xl</code> — 17.6px → 20px</p>
+          <p class="text-2xl"><code class="text-sm">.text-2xl</code> — 20px → 24px</p>
+          <p class="text-3xl"><code class="text-sm">.text-3xl</code> — 24px → 32px</p>
+          <p class="text-4xl"><code class="text-sm">.text-4xl</code> — 28px → 48px</p>
+          <p class="text-5xl"><code class="text-sm">.text-5xl</code> — 32px → 64px</p>
+        </div>
+
+        <p class="my-8">There are also utility classes for font weight and text alignment.</p>
+        <pre><code>&lt;p class="font-normal"&gt;Normal weight&lt;/p&gt;
+&lt;p class="font-medium"&gt;Medium weight&lt;/p&gt;
+&lt;p class="font-bold"&gt;Bold weight&lt;/p&gt;</code></pre>
+
+        <p class="my-8">Text alignment:</p>
+        <pre><code>&lt;p class="text-left"&gt;Left aligned&lt;/p&gt;
+&lt;p class="text-center"&gt;Center aligned&lt;/p&gt;
+&lt;p class="text-right"&gt;Right aligned&lt;/p&gt;</code></pre>
+
       </section>
 
       <section class="text-center">
         <h2 class="text-accent text-center">Inputs</h2>
-        <p class="my-8">Use the <code class="font-bold">form-control</code> class to create a form control. Example:</p>
+        <p class="my-8">Use the <code class="font-bold">form-control</code> class to create a form control. This puts a
+          label and input together and gives them some basic styling.</p>
         <pre><code>&lt;div class="form-control"&gt;
   &lt;label for="name"&gt;Name&lt;/label&gt;
   &lt;input type="text" id="name" name="name"&gt;

@@ -31,31 +31,51 @@
         --color-border: oklch(37.2% 0.044 257.287);
         --color-surface: oklch(98.4% 0.003 247.858);
         --color-badge: oklch(92.9% 0.013 255.508);
-        --spacing-1: 0.25rem;
-        --spacing-2: 0.5rem;
-        --spacing-3: 0.75rem;
-        --spacing-4: 1rem;
-        --spacing-5: 1.25rem;
-        --spacing-6: 1.5rem;
-        --spacing-7: 1.75rem;
-        --spacing-8: 2rem;
-        --spacing-9: 2.25rem;
-        --spacing-10: 2.5rem;
-        --spacing-11: 2.75rem;
-        --spacing-12: 3rem;
-        --spacing-13: 3.25rem;
-        --spacing-14: 3.5rem;
-        --spacing-15: 3.75rem;
-        --spacing-16: 4rem;
-        --text-xs: 0.75rem;
-        --text-sm: 0.875rem;
-        --text-base: 1rem;
-        --text-lg: 1.125rem;
-        --text-xl: 1.25rem;
-        --text-2xl: 1.5rem;
-        --text-3xl: 2rem;
-        --text-4xl: 3rem;
-        --text-5xl: 4rem;
+
+        /* Spacing scale (0.25rem increments) */
+        --spacing-unit: 0.25rem;
+
+        /* On mobile, scale the spacing unit down to 0.8 * 0.25rem */
+        @media (max-width: 768px) {
+                --spacing-unit: calc(0.8 * 0.25rem);
+        }
+
+        --spacing-1: calc(var(--spacing-unit) * 1);
+        --spacing-2: calc(var(--spacing-unit) * 2);
+        --spacing-3: calc(var(--spacing-unit) * 3);
+        --spacing-4: calc(var(--spacing-unit) * 4);
+        --spacing-5: calc(var(--spacing-unit) * 5);
+        --spacing-6: calc(var(--spacing-unit) * 6);
+        --spacing-7: calc(var(--spacing-unit) * 7);
+        --spacing-8: calc(var(--spacing-unit) * 8);
+        --spacing-9: calc(var(--spacing-unit) * 9);
+        --spacing-10: calc(var(--spacing-unit) * 10);
+        --spacing-11: calc(var(--spacing-unit) * 11);
+        --spacing-12: calc(var(--spacing-unit) * 12);
+        --spacing-13: calc(var(--spacing-unit) * 13);
+        --spacing-14: calc(var(--spacing-unit) * 14);
+        --spacing-15: calc(var(--spacing-unit) * 15);
+        --spacing-16: calc(var(--spacing-unit) * 16);
+
+        /* Fluid typography - smaller sizes scale gently, larger sizes scale more aggressively */
+        --text-xs: clamp(0.7rem, 0.68rem + 0.1vw, 0.75rem);
+        /* 11.2px → 12px */
+        --text-sm: clamp(0.8rem, 0.76rem + 0.2vw, 0.875rem);
+        /* 12.8px → 14px */
+        --text-base: clamp(0.9rem, 0.84rem + 0.3vw, 1rem);
+        /* 14.4px → 16px */
+        --text-lg: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+        /* 16px → 18px */
+        --text-xl: clamp(1.1rem, 0.95rem + 0.75vw, 1.25rem);
+        /* 17.6px → 20px */
+        --text-2xl: clamp(1.25rem, 1rem + 1.25vw, 1.5rem);
+        /* 20px → 24px */
+        --text-3xl: clamp(1.5rem, 1.1rem + 2vw, 2rem);
+        /* 24px → 32px */
+        --text-4xl: clamp(1.75rem, 1rem + 3.75vw, 3rem);
+        /* 28px → 48px */
+        --text-5xl: clamp(2rem, 0.8rem + 6vw, 4rem);
+        /* 32px → 64px */
         --page-content-width: 90rem;
         --line-height: 1.5;
 }
