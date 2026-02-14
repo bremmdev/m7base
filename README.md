@@ -67,15 +67,27 @@ m7base provides several button styles:
 <!-- Primary outline button -->
 <button class="btn-primary-outline">Primary Outline</button>
 
-<!-- Destructive button -->
+<!-- Destructive button -->git ad
 <button class="btn-destructive">Destructive</button>
 ```
 
 Customize the primary button by overriding the CSS variable `--color-accent`.
 
+**Disabled buttons:**
+
+All button styles support the `disabled` attribute:
+
+```html
+<button disabled>Default</button>
+<button class="btn-outline" disabled>Outline</button>
+<button class="btn-primary" disabled>Primary</button>
+<button class="btn-primary-outline" disabled>Primary Outline</button>
+<button class="btn-destructive" disabled>Destructive</button>
+```
+
 #### Card
 
-Use the `card` class to create a container with padding, border, and rounded corners:
+Use the `card` class to create a container with padding, border, and rounded corners. By default, the card is as wide as its content. Children are stacked vertically with a gap of 0.5rem:
 
 ```html
 <!-- Basic card -->
@@ -87,13 +99,24 @@ Use the `card` class to create a container with padding, border, and rounded cor
 
 #### Forms
 
-Use the `form-control` class to group labels and inputs and give them some basic styling:
+Use the `form-control` class to group labels and inputs and give them some basic styling. Works with text inputs, textareas, and select elements:
 
 ```html
 <form>
   <div class="form-control">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" />
+  </div>
+  <div class="form-control">
+    <label for="message">Message</label>
+    <textarea id="message" name="message"></textarea>
+  </div>
+  <div class="form-control">
+    <label for="country">Country</label>
+    <select name="country" id="country">
+      <option value="usa">USA</option>
+      <option value="germany">Germany</option>
+    </select>
   </div>
 </form>
 ```
@@ -171,7 +194,20 @@ m7base includes a comprehensive spacing system using CSS variables. Spacing valu
 
 #### Typography
 
+**Headings:**
+
+Use the `h1`, `h2`, `h3`, and `h4` elements to create headings. The font weight is set to 500 and sizes are fluidly scaled between mobile and desktop:
+
+```html
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+```
+
 **Text sizes:**
+
+Text size classes scale fluidly between mobile and desktop:
 
 ```html
 <p class="text-xs">Extra small</p>
@@ -184,6 +220,18 @@ m7base includes a comprehensive spacing system using CSS variables. Spacing valu
 <p class="text-4xl">4XL</p>
 <p class="text-5xl">5XL</p>
 ```
+
+Text size pixel ranges (mobile → desktop):
+
+- `.text-xs` — 11.2px → 12px
+- `.text-sm` — 12.8px → 14px
+- `.text-base` — 14.4px → 16px
+- `.text-lg` — 16px → 18px
+- `.text-xl` — 17.6px → 20px
+- `.text-2xl` — 20px → 24px
+- `.text-3xl` — 24px → 32px
+- `.text-4xl` — 28px → 48px
+- `.text-5xl` — 32px → 64px
 
 **Font weights:**
 
@@ -365,22 +413,6 @@ This project uses [Lightning CSS](https://lightningcss.dev) for bundling, minifi
 - **CSS Layers**: Preserves CSS layer structure (`@layer`)
 
 ### Configuration
-
-#### Browser Targets
-
-The build targets modern browsers with the following configuration:
-
-```
-"defaults, not IE 11"
-```
-
-This means:
-
-- Latest versions of major browsers
-- No Internet Explorer 11 support
-- Modern CSS features are transformed for compatibility
-
-To change browser targets, modify the `--targets` flag in the build scripts in `package.json`. You can also use a `browserslist` configuration in `package.json` and use the `--browserslist` flag instead.
 
 #### Output
 
