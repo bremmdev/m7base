@@ -10,7 +10,9 @@ A CSS library that gives websites a quick styling with modern CSS resets, base s
 npm install @bremmdev/m7base
 ```
 
-Then just import the `m7base.css' CSS file in your code.
+Then just import the `@bremmdev/m7base.css` CSS file in your code.
+
+Alternatively, you can download the `m7base.css` file in /dist
 
 ## Usage
 
@@ -99,7 +101,7 @@ Use the `card` class to create a container with padding, border, and rounded cor
 
 #### Forms
 
-Use the `form-control` class to group labels and inputs and give them some basic styling. Works with text inputs, textareas, and select elements:
+Use the `form-control` class to group labels and inputs and give them some basic styling. There are some default styles for common form elements like input, textarea and select.
 
 ```html
 <form>

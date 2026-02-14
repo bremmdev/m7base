@@ -47,6 +47,16 @@ textarea {
     min-height: calc((var(--text-base) * var(--line-height)) + (var(--spacing-2) * 2));
 }
 
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 button {
     padding: var(--spacing-2) var(--spacing-4);
     background-color: var(--color-foreground);
