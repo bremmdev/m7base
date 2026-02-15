@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
   <link rel="stylesheet" href="m7base.css">
   <link rel="stylesheet" href="styles.css" />
   <title>M7BASE</title>
@@ -15,6 +16,33 @@
   <div class="bg-grid"></div>
   <header class="page-container py-4">
     <span class="text-2xl font-bold">M7BASE</span>
+    <div class="theme-toggle" role="group" aria-label="Theme">
+      <button type="button" class="theme-toggle__btn" data-theme-value="light" aria-pressed="false" title="Light theme"
+        aria-label="Light theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-sun-icon lucide-sun">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+      </button>
+      <button type="button" class="theme-toggle__btn" data-theme-value="dark" aria-pressed="false" title="Dark theme"
+        aria-label="Dark theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-moon-icon lucide-moon">
+          <path
+            d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+        </svg>
+      </button>
+    </div>
     <a href="https://github.com/bremmdev/m7base" target="_blank">GitHub Repo <svg xmlns="http://www.w3.org/2000/svg"
         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link-icon lucide-external-link">
@@ -199,15 +227,15 @@
 &lt;/div&gt;</code></pre>
         <form class="p-4 flex flex-col items-center constrained">
           <div class="form-control">
-            <label for="email">Email</label>
+            <label class="text-left" for="email">Email</label>
             <input type="email" id="email" name="email">
           </div>
           <div class="form-control">
-            <label for="message">Message</label>
+            <label class="text-left" for="message">Message</label>
             <textarea id="message" name="message"></textarea>
           </div>
           <div class="form-control">
-            <label for="country">Country</label>
+            <label class="text-left" for="country">Country</label>
             <select name="country" id="country">
               <option value="usa">USA</option>
               <option value="germany">Germany</option>
