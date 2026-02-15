@@ -4,8 +4,20 @@ body {
 }
 
 .bg-grid {
-    background-image: linear-gradient(45deg, transparent 49%, #f9fafb 49%,
-            #f9fafb 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, #f9fafb 49%, #f9fafb 51%, transparent 51%);
+    /* Uses theme-aware foreground w/ low alpha so it works in light + dark */
+    --bg-grid-line: oklch(from var(--color-foreground) l c h / 0.03);
+
+    background-image:
+        linear-gradient(45deg,
+            transparent 49%,
+            var(--bg-grid-line) 49%,
+            var(--bg-grid-line) 51%,
+            transparent 51%),
+        linear-gradient(-45deg,
+            transparent 49%,
+            var(--bg-grid-line) 49%,
+            var(--bg-grid-line) 51%,
+            transparent 51%);
     background-size: 60px 60px;
     position: fixed;
     inset: 0;
@@ -74,7 +86,7 @@ header {
 }
 
 .hero-section {
-    background-color: oklch(from var(--color-accent) l c h / 0.1);
+    background-color: oklch(from var(--color-accent) l c h / 0.05);
     padding: var(--spacing-16);
     margin-block: 0 4rem;
 }
@@ -93,9 +105,16 @@ section {
     margin-top: 3rem;
 }
 
-pre,
-pre code {
+pre {
     display: block;
     margin-inline: auto;
-    text-align: center;
+    text-align: left;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+pre code {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
 }

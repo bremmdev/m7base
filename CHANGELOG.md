@@ -1,3 +1,8 @@
+## 0.4.0 - 2026-02-15
+
+- Add dark theme
+- Change accent color to amber
+
 ## 0.3.1 - 2026-02-14
 
 - Add link styles

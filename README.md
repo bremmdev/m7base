@@ -292,13 +292,32 @@ Text size pixel ranges (mobile → desktop):
 <div class="bg-accent">Accent background</div>
 ```
 
+### Dark Mode
+
+m7base includes full dark mode support. The theme is controlled via the `data-theme` attribute on the root element.
+
+**Enabling dark mode:**
+
+```html
+<!-- Light mode (default) -->
+<html>
+  <!-- ... -->
+</html>
+
+<!-- Dark mode -->
+<html data-theme="dark">
+  <!-- ... -->
+</html>
+```
+
 ### CSS Variables
 
-m7base uses CSS custom properties (variables) that you can override to customize the design:
+m7base uses CSS custom properties (variables) that you can override to customize the design. All color variables are defined separately for light and dark modes.
+
+**Light mode colors (default):**
 
 ```css
 :root {
-  /* Colors */
   --color-foreground: oklch(13% 0.028 261.692);
   --color-foreground-hover: color-mix(
     in oklch,
@@ -307,7 +326,12 @@ m7base uses CSS custom properties (variables) that you can override to customize
   );
   --color-foreground-inverted: oklch(1 0 0);
   --color-background: oklch(1 0 0);
-  --color-accent: oklch(51.8% 0.253 323.949);
+  --color-outline-hover: color-mix(
+    in oklch,
+    var(--color-background) 95%,
+    black 5%
+  );
+  --color-accent: oklch(0.58 0.16 85);
   --color-accent-hover: color-mix(in oklch, var(--color-accent) 90%, white 10%);
   --color-accent-outline: color-mix(
     in oklch,
@@ -321,7 +345,51 @@ m7base uses CSS custom properties (variables) that you can override to customize
     white 10%
   );
   --color-border: oklch(37.2% 0.044 257.287);
+  --color-surface: oklch(98.4% 0.003 247.858);
+  --color-badge: oklch(92.9% 0.013 255.508);
+}
+```
 
+**Dark mode colors:**
+
+```css
+:root[data-theme="dark"] {
+  --color-foreground: oklch(92.9% 0.013 255.508);
+  --color-foreground-hover: color-mix(
+    in oklch,
+    var(--color-foreground) 80%,
+    black 20%
+  );
+  --color-foreground-inverted: oklch(13% 0.028 261.692);
+  --color-background: oklch(13% 0.028 261.692);
+  --color-outline-hover: color-mix(
+    in oklch,
+    var(--color-background) 95%,
+    white 5%
+  );
+  --color-accent: oklch(92.4% 0.12 95.746);
+  --color-accent-hover: color-mix(in oklch, var(--color-accent) 90%, white 10%);
+  --color-accent-outline: color-mix(
+    in oklch,
+    var(--color-accent) 14%,
+    var(--color-background) 86%
+  );
+  --color-destructive: oklch(64.5% 0.246 16.439);
+  --color-destructive-hover: color-mix(
+    in oklch,
+    var(--color-destructive) 90%,
+    white 10%
+  );
+  --color-border: oklch(45% 0.044 257.287);
+  --color-surface: oklch(20.8% 0.042 265.755);
+  --color-badge: oklch(27.8% 0.033 256.848);
+}
+```
+
+**Spacing and typography variables:**
+
+```css
+:root {
   /* Spacing scale (0.25rem increments) */
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -345,14 +413,64 @@ m7base uses CSS custom properties (variables) that you can override to customize
 }
 ```
 
-**Customizing colors:**
+### Customizing Theme Colors
+
+To customize the theme colors, override the CSS variables for both light and dark modes.
+
+**Customizing the accent color:**
 
 ```css
 :root {
-  --color-accent: oklch(60% 0.2 200); /* Your custom accent color */
-  --color-foreground: oklch(20% 0.02 0); /* Your custom text color */
+  /* Light mode accent */
+  --color-accent: oklch(60% 0.2 250);
+  --color-accent-hover: color-mix(in oklch, var(--color-accent) 90%, white 10%);
+  --color-accent-outline: color-mix(
+    in oklch,
+    var(--color-accent) 10%,
+    white 90%
+  );
+}
+
+:root[data-theme="dark"] {
+  /* Dark mode accent - typically brighter for visibility on dark backgrounds */
+  --color-accent: oklch(75% 0.18 250);
+  --color-accent-hover: color-mix(in oklch, var(--color-accent) 90%, white 10%);
+  --color-accent-outline: color-mix(
+    in oklch,
+    var(--color-accent) 14%,
+    var(--color-background) 86%
+  );
 }
 ```
+
+**Customizing the full color scheme:**
+
+```css
+:root {
+  /* Light mode - custom blue theme */
+  --color-foreground: oklch(20% 0.02 240);
+  --color-background: oklch(98% 0.01 240);
+  --color-accent: oklch(55% 0.2 240);
+  --color-border: oklch(80% 0.02 240);
+  --color-surface: oklch(96% 0.015 240);
+}
+
+:root[data-theme="dark"] {
+  /* Dark mode - custom blue theme */
+  --color-foreground: oklch(90% 0.02 240);
+  --color-background: oklch(15% 0.03 240);
+  --color-accent: oklch(70% 0.18 240);
+  --color-border: oklch(40% 0.03 240);
+  --color-surface: oklch(22% 0.035 240);
+}
+```
+
+**Tips for dark mode colors:**
+
+- Increase the lightness of accent and destructive colors for better visibility on dark backgrounds
+- Invert foreground and background colors
+- Adjust border colors to be lighter (higher lightness value) for contrast against dark backgrounds
+- Use `color-mix()` with `black` instead of `white` for hover states on light-colored elements
 
 ### Base Styles
 
