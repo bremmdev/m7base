@@ -99,6 +99,23 @@ Use the `card` class to create a container with padding, border, and rounded cor
 </div>
 ```
 
+#### Custom Select
+
+Use the `custom-select` class to create a fully customizable select element. This is an opt-in feature for experimental browser features that allow full customization of native select elements using just CSS. It also supports rendering different HTML elements inside options, like SVGs.
+
+```html
+<select class="custom-select">
+  <button>
+    Selected animal:<selectedoption></selectedoption>
+  </button>
+  <option value="1">[insert SVG] Cat</option>
+  <option value="2">[insert SVG] Dog</option>
+  <option value="3">[insert SVG] Bird</option>
+</select>
+```
+
+Read more at [Customizable select on MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select).
+
 #### Forms
 
 Use the `form-control` class to group labels and inputs and give them some basic styling. There are some default styles for common form elements like input, textarea and select.

@@ -1,3 +1,7 @@
+## 0.5.0 - 2026-02-17
+
+- Add component for custom select behavior
+
 ## 0.4.0 - 2026-02-15
 
 - Add dark theme

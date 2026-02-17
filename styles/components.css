@@ -123,3 +123,65 @@
         color: var(--color-foreground-inverted);
     }
 }
+
+/* Custom select opt-in, only for browsers that support it */
+.custom-select {
+    appearance: base-select;
+    /* needed for custo behaviors to work */
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--spacing-2);
+    display: flex;
+    align-items: center;
+
+    /* The button inside the select */
+    button {
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-2);
+    }
+
+    /* Selected option display element */
+    selectedcontent {
+        display: flex;
+        gap: var(--spacing-2);
+    }
+
+    /* Picker icon (dropdown arrow) inside the button */
+    &::picker-icon {
+        color: var(--color-accent);
+    }
+
+    /* The dropdown picker */
+    &::picker(select) {
+        appearance: base-select;
+        margin-block: var(--spacing-2);
+        border-radius: var(--spacing-2);
+        padding: var(--spacing-2);
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        border: 1px solid var(--color-border);
+    }
+
+    /* Options inside the picker */
+    option {
+        padding: var(--spacing-2);
+        border-radius: var(--spacing-2);
+        margin-block: var(--spacing-2);
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Checkmark for selected option */
+        &::checkmark {
+            color: var(--color-accent);
+        }
+    }
+}
