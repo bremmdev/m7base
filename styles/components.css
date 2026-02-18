@@ -127,7 +127,7 @@
 /* Custom select opt-in, only for browsers that support it */
 .custom-select {
     appearance: base-select;
-    /* needed for custo behaviors to work */
+    /* needed for custom behaviors to work */
     background-color: var(--color-background);
     border: 1px solid var(--color-border);
     border-radius: var(--spacing-2);
@@ -152,6 +152,14 @@
     /* Picker icon (dropdown arrow) inside the button */
     &::picker-icon {
         color: var(--color-accent);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:open {
+        &::picker-icon {
+            transform: rotate(180deg);
+            transition: transform 0.2s ease-in-out;
+        }
     }
 
     /* The dropdown picker */
@@ -179,9 +187,17 @@
             margin-bottom: 0;
         }
 
-        /* Checkmark for selected option */
-        &::checkmark {
-            color: var(--color-accent);
+
+        &:checked {
+            background-color: var(--color-accent);
+            color: var(--color-foreground-inverted);
+            font-weight: 500;
+
+            &::checkmark {
+                color: var(--color-foreground-inverted);
+                content: "\2714\FE0E";
+                /* thicker checkmark */
+            }
         }
     }
 }

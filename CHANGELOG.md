@@ -1,3 +1,7 @@
+## 0.5.1 - 2026-02-18
+
+- Style improvements custom select
+
 ## 0.5.0 - 2026-02-17
 
 - Add component for custom select behavior
