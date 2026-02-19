@@ -31,6 +31,9 @@
         --color-border: oklch(37.2% 0.044 257.287);
         --color-surface: oklch(98.4% 0.003 247.858);
         --color-badge: oklch(92.9% 0.013 255.508);
+        --color-highlight: color-mix(in oklch,
+                        var(--color-accent) 30%,
+                        white 70%);
 
         /* Spacing scale (0.25rem increments) */
         --spacing-unit: 0.25rem;
@@ -109,6 +112,9 @@
         --color-border: oklch(45% 0.044 257.287);
         --color-surface: oklch(20.8% 0.042 265.755);
         --color-badge: oklch(27.8% 0.033 256.848);
+        --color-highlight: color-mix(in oklch,
+                        var(--color-accent) 50%,
+                        black 50%);
 }
 
 body {

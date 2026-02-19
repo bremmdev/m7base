@@ -274,6 +274,14 @@ Text size pixel ranges (mobile → desktop):
 <p class="text-accent">Accent color</p>
 ```
 
+**Text highlight:**
+
+Use the `text-highlight` class to highlight text or parts of text:
+
+```html
+<p>This is a <span class="text-highlight">highlighted</span> text.</p>
+```
+
 #### Layout
 
 **Flexbox utilities:**

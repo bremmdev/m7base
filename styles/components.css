@@ -201,3 +201,10 @@
         }
     }
 }
+
+.text-highlight {
+    background-color: var(--color-highlight);
+    color: var(--color-foreground);
+    padding: var(--spacing-1);
+    border-radius: var(--spacing-1);
+}
