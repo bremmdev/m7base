@@ -116,6 +116,30 @@ Use the `custom-select` class to create a fully customizable select element. Thi
 
 Read more at [Customizable select on MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select).
 
+#### Notification
+
+Use notification classes to display different types of messages to users:
+
+```html
+<!-- Success notification -->
+<div class="notification-success">This is a success notification.</div>
+
+<!-- Error notification -->
+<div class="notification-error">This is an error notification.</div>
+
+<!-- Warning notification -->
+<div class="notification-warning">This is a warning notification.</div>
+
+<!-- Info notification -->
+<div class="notification-info">This is an info notification.</div>
+```
+
+Each notification type includes an icon and uses color variables for theming:
+- `notification-success` - Uses `--color-success` and `--color-success-background`
+- `notification-error` - Uses `--color-error` and `--color-error-background`
+- `notification-warning` - Uses `--color-warning` and `--color-warning-background`
+- `notification-info` - Uses `--color-info` and `--color-info-background`
+
 #### Forms
 
 Use the `form-control` class to group labels and inputs and give them some basic styling. There are some default styles for common form elements like input, textarea and select.

@@ -1,3 +1,8 @@
+## 0.6.0 - 2026-02-19
+
+- Add text-highlight
+- Add notifcation
+
 ## 0.5.1 - 2026-02-18
 
 - Style improvements custom select

@@ -118,3 +118,11 @@ pre code {
     width: fit-content;
     margin-inline: auto;
 }
+
+.notifications {
+    div {
+        width: 20rem !important;
+        max-width: 100% !important;
+        margin-block: var(--spacing-4);
+    }
+}

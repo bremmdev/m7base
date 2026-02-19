@@ -34,6 +34,14 @@
         --color-highlight: color-mix(in oklch,
                         var(--color-accent) 30%,
                         white 70%);
+        --color-success-background: oklch(96.2% 0.044 156.743);
+        --color-success: oklch(0.448 0.119 151.328);
+        --color-error-background: oklch(94.1% 0.03 12.58);
+        --color-error: oklch(51.4% 0.222 16.935);
+        --color-warning-background: oklch(96.2% 0.059 95.617);
+        --color-warning: oklch(55.5% 0.163 48.998);
+        --color-info-background: oklch(95.1% 0.026 236.824);
+        --color-info: oklch(48.8% 0.243 264.376);
 
         /* Spacing scale (0.25rem increments) */
         --spacing-unit: 0.25rem;
@@ -115,6 +123,8 @@
         --color-highlight: color-mix(in oklch,
                         var(--color-accent) 50%,
                         black 50%);
+
+
 }
 
 body {
