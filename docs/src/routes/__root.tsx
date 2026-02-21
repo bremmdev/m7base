@@ -46,10 +46,21 @@ const TanStackDevtoolsComp = () => (<TanStackDevtools
   ]}
 />)
 
+const themeScript = `(function(){try{var t=localStorage.getItem("m7base-theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t)}else{document.documentElement.setAttribute("data-theme",window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}}catch(e){document.documentElement.setAttribute("data-theme","light")}})()`;
+
+// Suppress hydration errors for select elements as we are using the experimental selectedcontent element
+const suppressSelectHydrationErrors = import.meta.env.DEV
+  ? `(function(){var o=console.error;console.error=function(){var msg=String(arguments[0]);var all=Array.prototype.map.call(arguments,String).join(" ");var isHydration=(msg.indexOf("Hydration")!==-1||msg.indexOf("hydrat")!==-1)&&(all.indexOf("<select")!==-1||all.indexOf("<option")!==-1||all.indexOf("selectedcontent")!==-1);var isNesting=msg.indexOf("cannot contain")!==-1&&all.indexOf("<option")!==-1;if(isHydration||isNesting)return;o.apply(console,arguments)}})()`
+  : '';
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {suppressSelectHydrationErrors && (
+          <script dangerouslySetInnerHTML={{ __html: suppressSelectHydrationErrors }} />
+        )}
         <HeadContent />
       </head>
       <body>
@@ -58,7 +69,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <main>{children}</main>
         <TanStackDevtoolsComp />
         <Scripts />
-        <script src="/src/scripts/script.js"></script>
       </body>
     </html>
   )

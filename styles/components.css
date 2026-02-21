@@ -188,6 +188,9 @@
             margin-bottom: 0;
         }
 
+        &:hover {
+            background-color: var(--color-outline-hover);
+        }
 
         &:checked {
             background-color: var(--color-accent);
@@ -310,8 +313,6 @@
         }
     }
 }
-
-
 
 /** MISCELLANEOUS **/
 
