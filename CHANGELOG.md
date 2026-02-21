@@ -1,3 +1,8 @@
+## 0.7.0 - 2026-02-21
+
+- Add tooltip
+- Add icon-button
+
 ## 0.6.0 - 2026-02-19
 
 - Add text-highlight

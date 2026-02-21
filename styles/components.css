@@ -1,31 +1,21 @@
-.page-container {
-    max-width: var(--page-content-width);
-    margin-inline: auto;
-    width: 90%;
-}
+/** BADGE **/
 
-/* group a form input and label together */
-.form-control {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-1);
-    margin-block: var(--spacing-2);
-    width: 100%;
+.badge {
+    padding: var(--spacing-1) var(--spacing-3);
+    background-color: var(--color-badge);
+    width: fit-content;
+    border-radius: 100vw;
 
-    &:first-child {
-        margin-top: 0;
+    &.badge-outline {
+        background-color: transparent;
+        border: 1px solid var(--color-border);
+        color: var(--color-foreground);
     }
 
-    &:last-child {
-        margin-bottom: 0;
+    &.badge-primary {
+        background-color: var(--color-accent);
+        color: var(--color-foreground-inverted);
     }
-}
-
-/* group form actions together */
-.actions-container {
-    display: flex;
-    gap: var(--spacing-2);
-    margin-block: var(--spacing-6);
 }
 
 /* BUTTON COMPONENT STYLES
@@ -94,6 +84,22 @@
     }
 }
 
+.btn-icon {
+    padding: 0;
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--color-foreground);
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+    }
+}
+
+/** CARD **/
+
 .card {
     width: fit-content;
     color: var(--color-foreground);
@@ -106,23 +112,18 @@
     padding: var(--spacing-4);
 }
 
-.badge {
-    padding: var(--spacing-1) var(--spacing-3);
-    background-color: var(--color-badge);
+.card {
     width: fit-content;
-    border-radius: 100vw;
-
-    &.badge-outline {
-        background-color: transparent;
-        border: 1px solid var(--color-border);
-        color: var(--color-foreground);
-    }
-
-    &.badge-primary {
-        background-color: var(--color-accent);
-        color: var(--color-foreground-inverted);
-    }
+    color: var(--color-foreground);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    background-color: var(--color-background);
+    border-radius: var(--spacing-2);
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-4);
 }
+
 
 /* Custom select opt-in, only for browsers that support it */
 .custom-select {
@@ -202,12 +203,7 @@
     }
 }
 
-.text-highlight {
-    background-color: var(--color-highlight);
-    color: var(--color-foreground);
-    padding: var(--spacing-1);
-    border-radius: var(--spacing-1);
-}
+/** NOTIFICATION **/
 
 .notification-success {
     padding: var(--spacing-4);
@@ -275,4 +271,83 @@
         color: var(--color-info);
         margin-right: var(--spacing-2);
     }
+}
+
+/** TOOLTIP **/
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+
+    .tooltip-trigger:hover~.tooltip-content,
+    .tooltip-trigger:focus-visible~.tooltip-content {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.3s;
+    }
+
+    .tooltip-content {
+        position: absolute;
+        bottom: calc(-100% - var(--spacing-4));
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: max-content;
+        max-width: calc(100vw - 2 * var(--spacing-4));
+        color: var(--color-foreground);
+        background-color: var(--color-background);
+        border-radius: var(--spacing-2);
+        border: 1px solid var(--color-border);
+        padding: var(--spacing-2);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+
+        &.top {
+            bottom: auto;
+            top: calc(-100% - var(--spacing-6));
+        }
+    }
+}
+
+
+
+/** MISCELLANEOUS **/
+
+.page-container {
+    max-width: var(--page-content-width);
+    margin-inline: auto;
+    width: 90%;
+}
+
+.text-highlight {
+    background-color: var(--color-highlight);
+    color: var(--color-foreground);
+    padding: var(--spacing-1);
+    border-radius: var(--spacing-1);
+}
+
+/* group a form input and label together */
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    margin-block: var(--spacing-2);
+    width: 100%;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* group form actions together */
+.actions-container {
+    display: flex;
+    gap: var(--spacing-2);
+    margin-block: var(--spacing-6);
 }

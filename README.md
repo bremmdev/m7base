@@ -30,12 +30,13 @@ m7base provides ready-to-use component classes:
 
 - **Accordion** - Styled native `<details>` and `<summary>` elements
 - **Badge** - Small labels/tags (`badge`, `badge-outline`, `badge-primary`)
-- **Buttons** - Multiple button styles (`btn-outline`, `btn-primary`, `btn-primary-outline`, `btn-destructive`)
+- **Buttons** - Multiple button styles (`btn-outline`, `btn-primary`, `btn-primary-outline`, `btn-destructive`, `btn-icon`)
 - **Card** - Container with padding, border, and rounded corners
 - **Custom Select** - Fully customizable select element using experimental browser features
 - **Forms** - Form control grouping (`form-control`) with styled inputs, textareas, and selects
 - **Notification** - Alert messages (`notification-success`, `notification-error`, `notification-warning`, `notification-info`)
 - **Page Container** - Centered content with max-width (`page-container`)
+- **Tooltip** - Hover/focus-triggered tooltips (`tooltip`, `tooltip-trigger`, `tooltip-content`, `top` for positioning)
 
 For detailed examples and usage, visit the [documentation site](https://m7base.bremm.dev).
 

@@ -148,12 +148,14 @@
         <h2 class="text-accent text-center">Buttons</h2>
 
         <p class="my-8">Use the <code class="font-bold">btn</code> classes to create a button. If no class is added,
-          the button will be the default button based on the foreground color.</p>
+          the button will be the default button based on the foreground color. The icon button strips away styling and
+          makes the button a circle with a background color of the foreground color so it looks good with any icon.</p>
         <pre><code>&lt;button&gt;Default&lt;/button&gt;
 &lt;button class="btn-outline"&gt;Outline&lt;/button&gt;
 &lt;button class="btn-primary"&gt;Primary&lt;/button&gt;
 &lt;button class="btn-primary-outline"&gt;Primary Outline&lt;/button&gt;
-&lt;button class="btn-destructive"&gt;Destructive&lt;/button&gt;</code></pre>
+&lt;button class="btn-destructive"&gt;Destructive&lt;/button&gt;
+&lt;button class="btn-icon"&gt;[INSERT ICON HERE]&lt;/button&gt;</code></pre>
 
         <div class="flex gap-4 p-4 flex-center my-4 flex-wrap">
           <button>Default</button>
@@ -161,6 +163,13 @@
           <button class="btn-primary">Primary</button>
           <button class="btn-primary-outline">Primary Outline</button>
           <button class="btn-destructive">Destructive</button>
+          <button class="btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-info-icon lucide-info">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg></button>
         </div>
 
         <h3 class="text-accent mt-8">Disabled buttons</h3>
@@ -336,6 +345,63 @@
         <div class="notification-error">This is an error notification.</div>
         <div class="notification-warning">This is a warning notification.</div>
         <div class="notification-info">This is an info notification.</div>
+      </section>
+
+      <section class="text-center">
+        <h2 class="text-accent text-center">Tooltip</h2>
+        <p class="my-8">Use the <code class="font-bold">tooltip</code> class to create a tooltip. It shows the content
+          when the trigger is hovered or focused after a delay.
+        </p>
+        <pre><code>&lt;div class="tooltip"&gt;
+  &lt;button class="btn-icon tooltip-trigger"&gt;Hover me&lt;/button&gt;
+  &lt;div class="tooltip-content"&gt;This is a tooltip&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <div class="tooltip">
+          <button class="btn-icon tooltip-trigger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-info-icon lucide-info">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg></button>
+          <div class="tooltip-content">This is a tooltip </div>
+        </div>
+
+        <p class="my-8">Use the <code class="font-bold">top</code> class to position the tooltip above the trigger.</p>
+        <pre><code>&lt;div class="tooltip"&gt;
+  &lt;button class="btn-icon tooltip-trigger"&gt;Hover me&lt;/button&gt;
+  &lt;div class="tooltip-content top"&gt;This is a tooltip&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <div class="tooltip">
+          <button class="btn-icon tooltip-trigger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="lucide lucide-info-icon lucide-info">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg></button>
+          <div class="tooltip-content top">This is a tooltip</div>
+        </div>
+
+
+        <h3 class="text-accent mt-8">Accessibility</h3>
+        <p class="my-8">For proper accessibility, the tooltip should be associated with the trigger using the <code
+            class="font-bold">aria-describedby</code> attribute.</p>
+        <pre><code>&lt;div class="tooltip"&gt;
+  &lt;button class="btn-icon tooltip-trigger" aria-describedby="tooltip-content"&gt;Hover me&lt;/button&gt;
+  &lt;div class="tooltip-content" id="tooltip-content"&gt;This is a tooltip&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <div class="tooltip my-4">
+          <button class="btn-icon tooltip-trigger" aria-describedby="tooltip-content"><svg
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-info-icon lucide-info">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg></button>
+          <div class="tooltip-content" id="tooltip-content">This is a tooltip</div>
+        </div>
       </section>
 
       <section class="text-center">
