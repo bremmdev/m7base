@@ -55,14 +55,12 @@ jobs:
       - name: Publish to npm
         if: steps.version-check.outputs.should_publish == 'true'
         run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Upload docs build artifact
         uses: actions/upload-artifact@v4
         with:
           name: docs-dist
-          path: docs/dist
+          path: docs/dist/client
 
   deploy:
     runs-on: ubuntu-latest
