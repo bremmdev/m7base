@@ -101,6 +101,32 @@
         </details>
 
 
+        <h3 class="text-accent mt-8">Mutually exclusive accordions</h3>
+        <p class="my-8">Mutually exclusive accordions (only 1 accordion can be open at a time) can be accomplished
+          without JavaScript by using the <code class="font-bold">name</code> atttribue. All accordions with the same
+          <code class="font-bold">name</code> are mutually exclusive even if they are not in the same parent element.
+        </p>
+        <pre><code>&lt;details name="accordion-group"&gt;
+  &lt;summary&gt;This is the title of the accordion&lt;/summary&gt;
+  &lt;p&gt;This is the content of the accordion. It can be as long as you want.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details name="accordion-group"&gt;
+  &lt;summary&gt;This is the title of the second accordion&lt;/summary&gt;
+  &lt;p&gt;This is the content of the second accordion. It can be as long as you want.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+
+        <details name="accordion-group" class="mt-8 text-left">
+          <summary>This is the title of the accordion</summary>
+          <p>This is the content of the accordion. It can be as long as you want.</p>
+        </details>
+        <details name="accordion-group" class="text-left">
+          <summary>This is the title of the second accordion</summary>
+          <p>This is the content of the second accordion. It can be as long as you want.</p>
+        </details>
+        <details name="accordion-group" class="text-left">
+          <summary>This is the title of the third accordion</summary>
+          <p>This is the content of the third accordion. It can be as long as you want.</p>
+        </details>
       </section>
 
       <section class="text-center">
