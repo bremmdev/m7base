@@ -106,6 +106,15 @@ m7base uses CSS custom properties (variables) that you can override to customize
   --color-border: oklch(37.2% 0.044 257.287);
   --color-surface: oklch(98.4% 0.003 247.858);
   --color-badge: oklch(92.9% 0.013 255.508);
+  --color-highlight: color-mix(in oklch, var(--color-accent) 30%, white 70%);
+  --color-success: oklch(0.448 0.119 151.328);
+  --color-success-background: oklch(96.2% 0.044 156.743);
+  --color-error: oklch(51.4% 0.222 16.935);
+  --color-error-background: oklch(94.1% 0.03 12.58);
+  --color-warning: oklch(55.5% 0.163 48.998);
+  --color-warning-background: oklch(96.2% 0.059 95.617);
+  --color-info: oklch(48.8% 0.243 264.376);
+  --color-info-background: oklch(95.1% 0.026 236.824);
 }
 ```
 
@@ -142,6 +151,31 @@ m7base uses CSS custom properties (variables) that you can override to customize
   --color-border: oklch(45% 0.044 257.287);
   --color-surface: oklch(20.8% 0.042 265.755);
   --color-badge: oklch(27.8% 0.033 256.848);
+  --color-highlight: color-mix(in oklch, var(--color-accent) 50%, black 50%);
+  --color-success: oklch(87.1% 0.15 154.449);
+  --color-success-background: color-mix(
+    in oklch,
+    var(--color-success) 20%,
+    var(--color-background) 80%
+  );
+  --color-error: oklch(71.2% 0.194 13.428);
+  --color-error-background: color-mix(
+    in oklch,
+    var(--color-error) 20%,
+    var(--color-background) 80%
+  );
+  --color-warning: oklch(87.9% 0.169 91.605);
+  --color-warning-background: color-mix(
+    in oklch,
+    var(--color-warning) 20%,
+    var(--color-background) 80%
+  );
+  --color-info: oklch(82.8% 0.111 230.318);
+  --color-info-background: color-mix(
+    in oklch,
+    var(--color-info) 20%,
+    var(--color-background) 80%
+  );
 }
 ```
 

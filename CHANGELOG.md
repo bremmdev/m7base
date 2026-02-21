@@ -1,3 +1,7 @@
+## 0.7.1 - 2026-02-21
+
+- Change `notification` dark mode colors
+
 ## 0.7.0 - 2026-02-21
 
 - Add tooltip

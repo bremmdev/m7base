@@ -6,6 +6,7 @@ export default function CustomSelect() {
         <ClientOnly fallback={<div>Loading...</div>}>
             <select className="custom-select" id="animal-select" style={{ margin: '2rem auto' }}>
                 <button>
+                    {/* @ts-expect-error selectedcontent is an experimental HTML element */}
                     Selected animal:<selectedcontent></selectedcontent>
                 </button>
                 <option value="1" > <Cat /> Cat

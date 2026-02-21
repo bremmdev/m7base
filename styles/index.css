@@ -124,7 +124,14 @@
                         var(--color-accent) 50%,
                         black 50%);
 
-
+        --color-success: oklch(87.1% 0.15 154.449);
+        --color-success-background: color-mix(in oklch, var(--color-success) 20%, var(--color-background) 80%);
+        --color-error: oklch(71.2% 0.194 13.428);
+        --color-error-background: color-mix(in oklch, var(--color-error) 20%, var(--color-background) 80%);
+        --color-warning: oklch(87.9% 0.169 91.605);
+        --color-warning-background: color-mix(in oklch, var(--color-warning) 20%, var(--color-background) 80%);
+        --color-info: oklch(82.8% 0.111 230.318);
+        --color-info-background: color-mix(in oklch, var(--color-info) 20%, var(--color-background) 80%);
 }
 
 body {
