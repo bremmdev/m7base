@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build-and-publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,10 +26,7 @@ jobs:
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
           echo "Package: $PACKAGE_NAME@$PACKAGE_VERSION"
 
-          # Check if this specific version exists
           if npm view "$PACKAGE_NAME@$PACKAGE_VERSION" version > /dev/null 2>&1; then
-            PUBLISHED_VERSION=$(npm view "$PACKAGE_NAME@$PACKAGE_VERSION" version)
-            echo "Published version: $PUBLISHED_VERSION"
             echo "Version $PACKAGE_VERSION is already published, skipping publish"
             echo "should_publish=false" >> $GITHUB_OUTPUT
           else
@@ -40,41 +37,52 @@ jobs:
         # Ensure npm 11.5.1 or later is installed
       - name: Update npm
         run: npm install -g npm@latest
-      - name: Install dependencies
+
+      - name: Install root dependencies
         run: npm ci
-      - name: Build
+
+      - name: Build m7base CSS library
         run: npm run build
+
+      - name: Install docs dependencies
+        run: npm ci
+        working-directory: docs
+
+      - name: Build docs site
+        run: npm run build
+        working-directory: docs
+
       - name: Publish to npm
         if: steps.version-check.outputs.should_publish == 'true'
         run: npm publish --access public
-      - name: Upload build artifacts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Upload docs build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-output
-          path: |
-            ./docs
+          name: docs-dist
+          path: docs/dist
 
-  azure_deploy_job:
+  deploy:
     runs-on: ubuntu-latest
-    name: Azure Deploy Job
-    needs: build-and-publish
-
+    name: Deploy docs to Azure
+    needs: build
     steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-          lfs: false
-      - name: Download build artifacts
+      - name: Download docs build artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-output
+          name: docs-dist
+          path: docs-dist
+
       - name: Azure Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_ISLAND_0CCC30503 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "./docs" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "." # Built app content directory - optional
+          app_location: "docs-dist"
+          api_location: ""
+          output_location: ""
+          skip_app_build: true
