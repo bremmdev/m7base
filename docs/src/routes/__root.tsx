@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import appCss from '../styles.css?url'
 import m7baseCss from '../m7base.css?url'
-import SideBar from '../components/SideBar'
+import SideBar, { MobileMenuProvider } from '../components/SideBar'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -65,15 +65,17 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="bg-grid"></div>
-        <Header />
-        <Hero />
-        <div className="main-content">
-          <SideBar />
-          <main className="page-container">{children}</main>
-        </div>
-        <TanStackDevtoolsComp />
-        <Scripts />
+        <MobileMenuProvider>
+          <div className="bg-grid"></div>
+          <Header />
+          <Hero />
+          <div className="main-content">
+            <SideBar />
+            <main>{children}</main>
+          </div>
+          <TanStackDevtoolsComp />
+          <Scripts />
+        </MobileMenuProvider>
       </body>
     </html>
   )
