@@ -10,6 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UtilitiesTypographyRouteImport } from './routes/utilities.typography'
+import { Route as UtilitiesSpacingAndMarginRouteImport } from './routes/utilities.spacing-and-margin'
+import { Route as UtilitiesFlexRouteImport } from './routes/utilities.flex'
 import { Route as ComponentsTypographyRouteImport } from './routes/components.typography'
 import { Route as ComponentsTooltipRouteImport } from './routes/components.tooltip'
 import { Route as ComponentsNotificationRouteImport } from './routes/components.notification'
@@ -23,6 +26,22 @@ import { Route as ComponentsAccordionRouteImport } from './routes/components.acc
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UtilitiesTypographyRoute = UtilitiesTypographyRouteImport.update({
+  id: '/utilities/typography',
+  path: '/utilities/typography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UtilitiesSpacingAndMarginRoute =
+  UtilitiesSpacingAndMarginRouteImport.update({
+    id: '/utilities/spacing-and-margin',
+    path: '/utilities/spacing-and-margin',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const UtilitiesFlexRoute = UtilitiesFlexRouteImport.update({
+  id: '/utilities/flex',
+  path: '/utilities/flex',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsTypographyRoute = ComponentsTypographyRouteImport.update({
@@ -82,6 +101,9 @@ export interface FileRoutesByFullPath {
   '/components/notification': typeof ComponentsNotificationRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
+  '/utilities/flex': typeof UtilitiesFlexRoute
+  '/utilities/spacing-and-margin': typeof UtilitiesSpacingAndMarginRoute
+  '/utilities/typography': typeof UtilitiesTypographyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -94,6 +116,9 @@ export interface FileRoutesByTo {
   '/components/notification': typeof ComponentsNotificationRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
+  '/utilities/flex': typeof UtilitiesFlexRoute
+  '/utilities/spacing-and-margin': typeof UtilitiesSpacingAndMarginRoute
+  '/utilities/typography': typeof UtilitiesTypographyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -107,6 +132,9 @@ export interface FileRoutesById {
   '/components/notification': typeof ComponentsNotificationRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
+  '/utilities/flex': typeof UtilitiesFlexRoute
+  '/utilities/spacing-and-margin': typeof UtilitiesSpacingAndMarginRoute
+  '/utilities/typography': typeof UtilitiesTypographyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +149,9 @@ export interface FileRouteTypes {
     | '/components/notification'
     | '/components/tooltip'
     | '/components/typography'
+    | '/utilities/flex'
+    | '/utilities/spacing-and-margin'
+    | '/utilities/typography'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +164,9 @@ export interface FileRouteTypes {
     | '/components/notification'
     | '/components/tooltip'
     | '/components/typography'
+    | '/utilities/flex'
+    | '/utilities/spacing-and-margin'
+    | '/utilities/typography'
   id:
     | '__root__'
     | '/'
@@ -145,6 +179,9 @@ export interface FileRouteTypes {
     | '/components/notification'
     | '/components/tooltip'
     | '/components/typography'
+    | '/utilities/flex'
+    | '/utilities/spacing-and-margin'
+    | '/utilities/typography'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -158,6 +195,9 @@ export interface RootRouteChildren {
   ComponentsNotificationRoute: typeof ComponentsNotificationRoute
   ComponentsTooltipRoute: typeof ComponentsTooltipRoute
   ComponentsTypographyRoute: typeof ComponentsTypographyRoute
+  UtilitiesFlexRoute: typeof UtilitiesFlexRoute
+  UtilitiesSpacingAndMarginRoute: typeof UtilitiesSpacingAndMarginRoute
+  UtilitiesTypographyRoute: typeof UtilitiesTypographyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -167,6 +207,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/utilities/typography': {
+      id: '/utilities/typography'
+      path: '/utilities/typography'
+      fullPath: '/utilities/typography'
+      preLoaderRoute: typeof UtilitiesTypographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/utilities/spacing-and-margin': {
+      id: '/utilities/spacing-and-margin'
+      path: '/utilities/spacing-and-margin'
+      fullPath: '/utilities/spacing-and-margin'
+      preLoaderRoute: typeof UtilitiesSpacingAndMarginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/utilities/flex': {
+      id: '/utilities/flex'
+      path: '/utilities/flex'
+      fullPath: '/utilities/flex'
+      preLoaderRoute: typeof UtilitiesFlexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components/typography': {
@@ -246,6 +307,9 @@ const rootRouteChildren: RootRouteChildren = {
   ComponentsNotificationRoute: ComponentsNotificationRoute,
   ComponentsTooltipRoute: ComponentsTooltipRoute,
   ComponentsTypographyRoute: ComponentsTypographyRoute,
+  UtilitiesFlexRoute: UtilitiesFlexRoute,
+  UtilitiesSpacingAndMarginRoute: UtilitiesSpacingAndMarginRoute,
+  UtilitiesTypographyRoute: UtilitiesTypographyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

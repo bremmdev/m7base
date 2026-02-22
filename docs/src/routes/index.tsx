@@ -1,16 +1,12 @@
 
 import { createFileRoute } from '@tanstack/react-router'
-import CustomSelect from '../components/CustomSelect'
+
 
 export const Route = createFileRoute('/')({ component: App })
 
 function App() {
   return (
     <>
-
-
-
-
       <section className="text-center">
         <h2 className="text-accent text-center">Installation</h2>
 
@@ -23,8 +19,6 @@ function App() {
         <p className="my-8">Alternatively, you can <a href="m7base.css" download="m7base.css">download this CSS file</a> and
           include it in your project.</p>
       </section>
-
-
 
       <section className="text-center">
         <h2 className="text-accent text-center">CSS Variables, dark mode and layers</h2>
@@ -79,9 +73,6 @@ function App() {
         </p>
 
       </section>
-
-
-
     </>
   )
 }
