@@ -18,7 +18,8 @@
   "scripts": {
     "generate:utilities": "node scripts/generate-utilities.js",
     "build": "lightningcss --bundle --minify --targets \"defaults, not IE 11\" styles/index.css --output-dir dist && mv dist/index.css dist/m7base.css && cp dist/m7base.css docs/src/m7base.css && cp dist/m7base.css docs/src/m7base.css",
-    "build:docs": "cd docs && npm run build"
+    "build:docs": "cd docs && npm run build",
+    "dev": "cd docs && npm run dev"
   },
   "keywords": [],
   "author": "",

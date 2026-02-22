@@ -2,7 +2,7 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import Header from '../components/Header'
-
+import Hero from '../components/Hero'
 import appCss from '../styles.css?url'
 import m7baseCss from '../m7base.css?url'
 
@@ -66,7 +66,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <div className="bg-grid"></div>
         <Header />
-        <main>{children}</main>
+        <Hero />
+        <main className="page-container">{children}</main>
         <TanStackDevtoolsComp />
         <Scripts />
       </body>

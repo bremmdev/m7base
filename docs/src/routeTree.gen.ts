@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComponentsTypographyRouteImport } from './routes/components.typography'
+import { Route as ComponentsTooltipRouteImport } from './routes/components.tooltip'
+import { Route as ComponentsNotificationRouteImport } from './routes/components.notification'
+import { Route as ComponentsFormsRouteImport } from './routes/components.forms'
+import { Route as ComponentsCustomSelectRouteImport } from './routes/components.custom-select'
+import { Route as ComponentsCardRouteImport } from './routes/components.card'
+import { Route as ComponentsButtonsRouteImport } from './routes/components.buttons'
+import { Route as ComponentsBadgeRouteImport } from './routes/components.badge'
+import { Route as ComponentsAccordionRouteImport } from './routes/components.accordion'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComponentsTypographyRoute = ComponentsTypographyRouteImport.update({
+  id: '/components/typography',
+  path: '/components/typography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsTooltipRoute = ComponentsTooltipRouteImport.update({
+  id: '/components/tooltip',
+  path: '/components/tooltip',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsNotificationRoute = ComponentsNotificationRouteImport.update({
+  id: '/components/notification',
+  path: '/components/notification',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsFormsRoute = ComponentsFormsRouteImport.update({
+  id: '/components/forms',
+  path: '/components/forms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsCustomSelectRoute = ComponentsCustomSelectRouteImport.update({
+  id: '/components/custom-select',
+  path: '/components/custom-select',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsCardRoute = ComponentsCardRouteImport.update({
+  id: '/components/card',
+  path: '/components/card',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsButtonsRoute = ComponentsButtonsRouteImport.update({
+  id: '/components/buttons',
+  path: '/components/buttons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsBadgeRoute = ComponentsBadgeRouteImport.update({
+  id: '/components/badge',
+  path: '/components/badge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsAccordionRoute = ComponentsAccordionRouteImport.update({
+  id: '/components/accordion',
+  path: '/components/accordion',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/components/accordion': typeof ComponentsAccordionRoute
+  '/components/badge': typeof ComponentsBadgeRoute
+  '/components/buttons': typeof ComponentsButtonsRoute
+  '/components/card': typeof ComponentsCardRoute
+  '/components/custom-select': typeof ComponentsCustomSelectRoute
+  '/components/forms': typeof ComponentsFormsRoute
+  '/components/notification': typeof ComponentsNotificationRoute
+  '/components/tooltip': typeof ComponentsTooltipRoute
+  '/components/typography': typeof ComponentsTypographyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/components/accordion': typeof ComponentsAccordionRoute
+  '/components/badge': typeof ComponentsBadgeRoute
+  '/components/buttons': typeof ComponentsButtonsRoute
+  '/components/card': typeof ComponentsCardRoute
+  '/components/custom-select': typeof ComponentsCustomSelectRoute
+  '/components/forms': typeof ComponentsFormsRoute
+  '/components/notification': typeof ComponentsNotificationRoute
+  '/components/tooltip': typeof ComponentsTooltipRoute
+  '/components/typography': typeof ComponentsTypographyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/components/accordion': typeof ComponentsAccordionRoute
+  '/components/badge': typeof ComponentsBadgeRoute
+  '/components/buttons': typeof ComponentsButtonsRoute
+  '/components/card': typeof ComponentsCardRoute
+  '/components/custom-select': typeof ComponentsCustomSelectRoute
+  '/components/forms': typeof ComponentsFormsRoute
+  '/components/notification': typeof ComponentsNotificationRoute
+  '/components/tooltip': typeof ComponentsTooltipRoute
+  '/components/typography': typeof ComponentsTypographyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/components/accordion'
+    | '/components/badge'
+    | '/components/buttons'
+    | '/components/card'
+    | '/components/custom-select'
+    | '/components/forms'
+    | '/components/notification'
+    | '/components/tooltip'
+    | '/components/typography'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/components/accordion'
+    | '/components/badge'
+    | '/components/buttons'
+    | '/components/card'
+    | '/components/custom-select'
+    | '/components/forms'
+    | '/components/notification'
+    | '/components/tooltip'
+    | '/components/typography'
+  id:
+    | '__root__'
+    | '/'
+    | '/components/accordion'
+    | '/components/badge'
+    | '/components/buttons'
+    | '/components/card'
+    | '/components/custom-select'
+    | '/components/forms'
+    | '/components/notification'
+    | '/components/tooltip'
+    | '/components/typography'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComponentsAccordionRoute: typeof ComponentsAccordionRoute
+  ComponentsBadgeRoute: typeof ComponentsBadgeRoute
+  ComponentsButtonsRoute: typeof ComponentsButtonsRoute
+  ComponentsCardRoute: typeof ComponentsCardRoute
+  ComponentsCustomSelectRoute: typeof ComponentsCustomSelectRoute
+  ComponentsFormsRoute: typeof ComponentsFormsRoute
+  ComponentsNotificationRoute: typeof ComponentsNotificationRoute
+  ComponentsTooltipRoute: typeof ComponentsTooltipRoute
+  ComponentsTypographyRoute: typeof ComponentsTypographyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/components/typography': {
+      id: '/components/typography'
+      path: '/components/typography'
+      fullPath: '/components/typography'
+      preLoaderRoute: typeof ComponentsTypographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/tooltip': {
+      id: '/components/tooltip'
+      path: '/components/tooltip'
+      fullPath: '/components/tooltip'
+      preLoaderRoute: typeof ComponentsTooltipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/notification': {
+      id: '/components/notification'
+      path: '/components/notification'
+      fullPath: '/components/notification'
+      preLoaderRoute: typeof ComponentsNotificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/forms': {
+      id: '/components/forms'
+      path: '/components/forms'
+      fullPath: '/components/forms'
+      preLoaderRoute: typeof ComponentsFormsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/custom-select': {
+      id: '/components/custom-select'
+      path: '/components/custom-select'
+      fullPath: '/components/custom-select'
+      preLoaderRoute: typeof ComponentsCustomSelectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/card': {
+      id: '/components/card'
+      path: '/components/card'
+      fullPath: '/components/card'
+      preLoaderRoute: typeof ComponentsCardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/buttons': {
+      id: '/components/buttons'
+      path: '/components/buttons'
+      fullPath: '/components/buttons'
+      preLoaderRoute: typeof ComponentsButtonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/badge': {
+      id: '/components/badge'
+      path: '/components/badge'
+      fullPath: '/components/badge'
+      preLoaderRoute: typeof ComponentsBadgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/accordion': {
+      id: '/components/accordion'
+      path: '/components/accordion'
+      fullPath: '/components/accordion'
+      preLoaderRoute: typeof ComponentsAccordionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComponentsAccordionRoute: ComponentsAccordionRoute,
+  ComponentsBadgeRoute: ComponentsBadgeRoute,
+  ComponentsButtonsRoute: ComponentsButtonsRoute,
+  ComponentsCardRoute: ComponentsCardRoute,
+  ComponentsCustomSelectRoute: ComponentsCustomSelectRoute,
+  ComponentsFormsRoute: ComponentsFormsRoute,
+  ComponentsNotificationRoute: ComponentsNotificationRoute,
+  ComponentsTooltipRoute: ComponentsTooltipRoute,
+  ComponentsTypographyRoute: ComponentsTypographyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
