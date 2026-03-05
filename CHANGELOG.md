@@ -1,3 +1,8 @@
+## 0.8.0 - 2026-03-05
+
+- Add `spinner`
+- Add `breadcrumb`
+
 ## 0.7.1 - 2026-02-21
 
 - Change `notification` dark mode colors

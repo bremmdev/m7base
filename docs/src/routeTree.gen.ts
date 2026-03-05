@@ -15,6 +15,7 @@ import { Route as UtilitiesSpacingAndMarginRouteImport } from './routes/utilitie
 import { Route as UtilitiesFlexRouteImport } from './routes/utilities.flex'
 import { Route as ComponentsTypographyRouteImport } from './routes/components.typography'
 import { Route as ComponentsTooltipRouteImport } from './routes/components.tooltip'
+import { Route as ComponentsSpinnerRouteImport } from './routes/components.spinner'
 import { Route as ComponentsNotificationRouteImport } from './routes/components.notification'
 import { Route as ComponentsFormsRouteImport } from './routes/components.forms'
 import { Route as ComponentsCustomSelectRouteImport } from './routes/components.custom-select'
@@ -53,6 +54,11 @@ const ComponentsTypographyRoute = ComponentsTypographyRouteImport.update({
 const ComponentsTooltipRoute = ComponentsTooltipRouteImport.update({
   id: '/components/tooltip',
   path: '/components/tooltip',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsSpinnerRoute = ComponentsSpinnerRouteImport.update({
+  id: '/components/spinner',
+  path: '/components/spinner',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsNotificationRoute = ComponentsNotificationRouteImport.update({
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/components/custom-select': typeof ComponentsCustomSelectRoute
   '/components/forms': typeof ComponentsFormsRoute
   '/components/notification': typeof ComponentsNotificationRoute
+  '/components/spinner': typeof ComponentsSpinnerRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
   '/utilities/flex': typeof UtilitiesFlexRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/components/custom-select': typeof ComponentsCustomSelectRoute
   '/components/forms': typeof ComponentsFormsRoute
   '/components/notification': typeof ComponentsNotificationRoute
+  '/components/spinner': typeof ComponentsSpinnerRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
   '/utilities/flex': typeof UtilitiesFlexRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/components/custom-select': typeof ComponentsCustomSelectRoute
   '/components/forms': typeof ComponentsFormsRoute
   '/components/notification': typeof ComponentsNotificationRoute
+  '/components/spinner': typeof ComponentsSpinnerRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
   '/utilities/flex': typeof UtilitiesFlexRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/components/custom-select'
     | '/components/forms'
     | '/components/notification'
+    | '/components/spinner'
     | '/components/tooltip'
     | '/components/typography'
     | '/utilities/flex'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/components/custom-select'
     | '/components/forms'
     | '/components/notification'
+    | '/components/spinner'
     | '/components/tooltip'
     | '/components/typography'
     | '/utilities/flex'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/components/custom-select'
     | '/components/forms'
     | '/components/notification'
+    | '/components/spinner'
     | '/components/tooltip'
     | '/components/typography'
     | '/utilities/flex'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   ComponentsCustomSelectRoute: typeof ComponentsCustomSelectRoute
   ComponentsFormsRoute: typeof ComponentsFormsRoute
   ComponentsNotificationRoute: typeof ComponentsNotificationRoute
+  ComponentsSpinnerRoute: typeof ComponentsSpinnerRoute
   ComponentsTooltipRoute: typeof ComponentsTooltipRoute
   ComponentsTypographyRoute: typeof ComponentsTypographyRoute
   UtilitiesFlexRoute: typeof UtilitiesFlexRoute
@@ -255,6 +268,13 @@ declare module '@tanstack/react-router' {
       path: '/components/tooltip'
       fullPath: '/components/tooltip'
       preLoaderRoute: typeof ComponentsTooltipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/spinner': {
+      id: '/components/spinner'
+      path: '/components/spinner'
+      fullPath: '/components/spinner'
+      preLoaderRoute: typeof ComponentsSpinnerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components/notification': {
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComponentsCustomSelectRoute: ComponentsCustomSelectRoute,
   ComponentsFormsRoute: ComponentsFormsRoute,
   ComponentsNotificationRoute: ComponentsNotificationRoute,
+  ComponentsSpinnerRoute: ComponentsSpinnerRoute,
   ComponentsTooltipRoute: ComponentsTooltipRoute,
   ComponentsTypographyRoute: ComponentsTypographyRoute,
   UtilitiesFlexRoute: UtilitiesFlexRoute,

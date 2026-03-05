@@ -37,6 +37,7 @@ m7base provides ready-to-use component classes:
 - **Forms** - Form control grouping (`form-control`) with styled inputs, textareas, and selects
 - **Notification** - Alert messages (`notification-success`, `notification-error`, `notification-warning`, `notification-info`)
 - **Page Container** - Centered content with max-width (`page-container`)
+- **Spinner** - Animating spinner for loading states (`spinner` with `medium` and `large` modifiers)
 - **Tooltip** - Hover/focus-triggered tooltips (`tooltip`, `tooltip-trigger`, `tooltip-content`, `top` for positioning)
 
 For detailed examples and usage, visit the [documentation site](https://m7base.bremm.dev).

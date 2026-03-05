@@ -140,3 +140,13 @@ body {
         background-color: var(--color-background);
         font-size: var(--text-base);
 }
+
+@keyframes spin {
+        from {
+                transform: rotate(0deg);
+        }
+
+        to {
+                transform: rotate(360deg);
+        }
+}
