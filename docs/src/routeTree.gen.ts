@@ -20,6 +20,7 @@ import { Route as ComponentsFormsRouteImport } from './routes/components.forms'
 import { Route as ComponentsCustomSelectRouteImport } from './routes/components.custom-select'
 import { Route as ComponentsCardRouteImport } from './routes/components.card'
 import { Route as ComponentsButtonsRouteImport } from './routes/components.buttons'
+import { Route as ComponentsBreadcrumbRouteImport } from './routes/components.breadcrumb'
 import { Route as ComponentsBadgeRouteImport } from './routes/components.badge'
 import { Route as ComponentsAccordionRouteImport } from './routes/components.accordion'
 
@@ -79,6 +80,11 @@ const ComponentsButtonsRoute = ComponentsButtonsRouteImport.update({
   path: '/components/buttons',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComponentsBreadcrumbRoute = ComponentsBreadcrumbRouteImport.update({
+  id: '/components/breadcrumb',
+  path: '/components/breadcrumb',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComponentsBadgeRoute = ComponentsBadgeRouteImport.update({
   id: '/components/badge',
   path: '/components/badge',
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components/accordion': typeof ComponentsAccordionRoute
   '/components/badge': typeof ComponentsBadgeRoute
+  '/components/breadcrumb': typeof ComponentsBreadcrumbRoute
   '/components/buttons': typeof ComponentsButtonsRoute
   '/components/card': typeof ComponentsCardRoute
   '/components/custom-select': typeof ComponentsCustomSelectRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components/accordion': typeof ComponentsAccordionRoute
   '/components/badge': typeof ComponentsBadgeRoute
+  '/components/breadcrumb': typeof ComponentsBreadcrumbRoute
   '/components/buttons': typeof ComponentsButtonsRoute
   '/components/card': typeof ComponentsCardRoute
   '/components/custom-select': typeof ComponentsCustomSelectRoute
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/components/accordion': typeof ComponentsAccordionRoute
   '/components/badge': typeof ComponentsBadgeRoute
+  '/components/breadcrumb': typeof ComponentsBreadcrumbRoute
   '/components/buttons': typeof ComponentsButtonsRoute
   '/components/card': typeof ComponentsCardRoute
   '/components/custom-select': typeof ComponentsCustomSelectRoute
@@ -142,6 +151,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components/accordion'
     | '/components/badge'
+    | '/components/breadcrumb'
     | '/components/buttons'
     | '/components/card'
     | '/components/custom-select'
@@ -157,6 +167,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components/accordion'
     | '/components/badge'
+    | '/components/breadcrumb'
     | '/components/buttons'
     | '/components/card'
     | '/components/custom-select'
@@ -172,6 +183,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components/accordion'
     | '/components/badge'
+    | '/components/breadcrumb'
     | '/components/buttons'
     | '/components/card'
     | '/components/custom-select'
@@ -188,6 +200,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComponentsAccordionRoute: typeof ComponentsAccordionRoute
   ComponentsBadgeRoute: typeof ComponentsBadgeRoute
+  ComponentsBreadcrumbRoute: typeof ComponentsBreadcrumbRoute
   ComponentsButtonsRoute: typeof ComponentsButtonsRoute
   ComponentsCardRoute: typeof ComponentsCardRoute
   ComponentsCustomSelectRoute: typeof ComponentsCustomSelectRoute
@@ -279,6 +292,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsButtonsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/components/breadcrumb': {
+      id: '/components/breadcrumb'
+      path: '/components/breadcrumb'
+      fullPath: '/components/breadcrumb'
+      preLoaderRoute: typeof ComponentsBreadcrumbRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/components/badge': {
       id: '/components/badge'
       path: '/components/badge'
@@ -300,6 +320,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComponentsAccordionRoute: ComponentsAccordionRoute,
   ComponentsBadgeRoute: ComponentsBadgeRoute,
+  ComponentsBreadcrumbRoute: ComponentsBreadcrumbRoute,
   ComponentsButtonsRoute: ComponentsButtonsRoute,
   ComponentsCardRoute: ComponentsCardRoute,
   ComponentsCustomSelectRoute: ComponentsCustomSelectRoute,

@@ -18,6 +18,37 @@
     }
 }
 
+
+/* BREADCRUMB */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--spacing-2);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    a {
+        &::after {
+            content: ">";
+            display: inline-block;
+            /* breaks text-decoration inheritance so chevron has no underline */
+            margin-left: var(--spacing-2);
+            color: var(--color-foreground);
+            font-weight: 700;
+        }
+    }
+}
+
 /* BUTTON COMPONENT STYLES
 - outline
 - primary

@@ -30,6 +30,7 @@ m7base provides ready-to-use component classes:
 
 - **Accordion** - Styled native `<details>` and `<summary>` elements
 - **Badge** - Small labels/tags (`badge`, `badge-outline`, `badge-primary`)
+- **Breadcrumb** - Breadcrumb trail (`breadcrumb`)
 - **Buttons** - Multiple button styles (`btn-outline`, `btn-primary`, `btn-primary-outline`, `btn-destructive`, `btn-icon`)
 - **Card** - Container with padding, border, and rounded corners
 - **Custom Select** - Fully customizable select element using experimental browser features

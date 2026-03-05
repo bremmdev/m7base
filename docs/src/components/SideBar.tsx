@@ -80,6 +80,7 @@ export default function SideBar() {
                     <ul>
                         <li><Link to="/components/accordion">Accordion</Link></li>
                         <li><Link to="/components/badge">Badge</Link></li>
+                        <li><Link to="/components/breadcrumb">Breadcrumb</Link></li>
                         <li><Link to="/components/buttons">Buttons</Link></li>
                         <li><Link to="/components/card">Card</Link></li>
                         <li><Link to="/components/custom-select">Custom Select</Link></li>
