@@ -1,5 +1,7 @@
-::root {
-  --sidebar-width: 20rem;
+@layer theme {
+  :root {
+    --sidebar-width: 20rem;
+  }
 }
 
 body {
@@ -31,10 +33,14 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-4);
+  display: grid;
+  grid-template-columns: max-content max-content max-content 1fr;
+  gap: var(--spacing-2);
+
+  @media (width > 1200px) {
+    grid-template-columns: var(--sidebar-width) 1fr max-content;
+    gap: var(--spacing-4);
+  }
 
   a {
     font-weight: 500;
@@ -46,12 +52,21 @@ header {
       text-decoration: underline;
     }
 
+    /* GitHub Repo link */
+    &:not(.logo) {
+      justify-content: flex-end;
+    }
+
     svg {
       width: 1.25rem;
       height: 1.25rem;
       flex: none;
       display: block;
     }
+  }
+
+  .theme-toggle {
+    justify-content: center;
   }
 }
 
@@ -64,6 +79,8 @@ header {
 .main-content {
   display: flex;
   gap: var(--spacing-4);
+  max-width: var(--page-content-width);
+  margin-inline: auto;
 
   main {
     margin-inline: auto;
@@ -82,7 +99,6 @@ header {
   flex-shrink: 0;
   background-color: oklch(from var(--color-accent) l c h / 0.05);
   padding: var(--spacing-8);
-  min-height: calc(100vh - 2 * var(--spacing-16));
 
   ul {
     margin-block: var(--spacing-8);

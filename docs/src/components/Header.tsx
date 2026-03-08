@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <header className="page-container py-4">
             <HamburgerButton />
-            <Link to="/" className="text-2xl font-bold">M7BASE</Link>
+            <Link to="/" className="text-2xl font-bold logo">M7BASE</Link>
             <ThemeButtons />
             <a href="https://github.com/bremmdev/m7base" target="_blank">GitHub Repo <ExternalLink /></a>
         </header>
