@@ -1,8 +1,18 @@
 
 import { createFileRoute } from '@tanstack/react-router'
-
+import m7baseCssRaw from '../../../dist/m7base.css?raw'
 
 export const Route = createFileRoute('/')({ component: App })
+
+function downloadCSS() {
+  const blob = new Blob([m7baseCssRaw], { type: 'text/css' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = 'm7base.css'
+  a.click()
+  URL.revokeObjectURL(url)
+}
 
 function App() {
   return (
@@ -16,7 +26,7 @@ function App() {
         <p className="my-8">Then import the CSS file in your code:</p>
         <pre><code>import '@bremmdev/m7base.css'</code></pre>
 
-        <p className="my-8">Alternatively, you can <a href="m7base.css" download="m7base.css">download this CSS file</a> and
+        <p className="my-8">Alternatively, you can <a href="#" onClick={(e) => { e.preventDefault(); downloadCSS() }}>download this CSS file</a> and
           include it in your project.</p>
       </section>
 
