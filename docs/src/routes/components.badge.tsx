@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/components/badge')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Badge - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

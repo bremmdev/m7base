@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/components/spinner')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Spinner - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

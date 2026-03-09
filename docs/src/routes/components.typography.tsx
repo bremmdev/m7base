@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/components/typography')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Typography - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

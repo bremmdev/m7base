@@ -3,6 +3,13 @@ import { Info } from 'lucide-react'
 
 export const Route = createFileRoute('/components/tooltip')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Tooltip - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

@@ -3,6 +3,13 @@ import CustomSelect from '../components/CustomSelect'
 
 export const Route = createFileRoute('/components/custom-select')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Custom select - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/utilities/spacing-and-margin')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Spacing and margin - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

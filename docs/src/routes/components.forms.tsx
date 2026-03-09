@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/components/forms')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Forms and Inputs - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

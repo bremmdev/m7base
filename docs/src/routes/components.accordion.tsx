@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/components/accordion')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Accordion - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

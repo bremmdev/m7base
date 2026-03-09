@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/components/card')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Card - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {

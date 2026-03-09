@@ -2,6 +2,13 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/components/buttons')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: 'Buttons - M7BASE',
+      },
+    ],
+  }),
 })
 
 function RouteComponent() {
