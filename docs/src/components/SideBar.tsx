@@ -86,6 +86,7 @@ export default function SideBar() {
                         <li><Link to="/components/custom-select">Custom Select</Link></li>
                         <li><Link to="/components/forms">Forms</Link></li>
                         <li><Link to="/components/notification">Notification</Link></li>
+                        <li><Link to="/components/progress">Progress</Link></li>
                         <li><Link to="/components/spinner">Spinner</Link></li>
                         <li><Link to="/components/tooltip">Tooltip</Link></li>
                         <li><Link to="/components/typography">Typography</Link></li>

@@ -42,6 +42,7 @@
         --color-warning: oklch(55.5% 0.163 48.998);
         --color-info-background: oklch(95.1% 0.026 236.824);
         --color-info: oklch(48.8% 0.243 264.376);
+        --color-progress-background: oklch(92.9% 0.013 255.508);
 
         /* Spacing scale (0.25rem increments) */
         --spacing-unit: 0.25rem;
@@ -132,6 +133,7 @@
         --color-warning-background: color-mix(in oklch, var(--color-warning) 20%, var(--color-background) 80%);
         --color-info: oklch(82.8% 0.111 230.318);
         --color-info-background: color-mix(in oklch, var(--color-info) 20%, var(--color-background) 80%);
+        --color-progress-background: oklch(27.9% 0.041 260.031);
 }
 
 body {

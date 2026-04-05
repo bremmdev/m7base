@@ -16,6 +16,7 @@ import { Route as UtilitiesFlexRouteImport } from './routes/utilities.flex'
 import { Route as ComponentsTypographyRouteImport } from './routes/components.typography'
 import { Route as ComponentsTooltipRouteImport } from './routes/components.tooltip'
 import { Route as ComponentsSpinnerRouteImport } from './routes/components.spinner'
+import { Route as ComponentsProgressRouteImport } from './routes/components.progress'
 import { Route as ComponentsNotificationRouteImport } from './routes/components.notification'
 import { Route as ComponentsFormsRouteImport } from './routes/components.forms'
 import { Route as ComponentsCustomSelectRouteImport } from './routes/components.custom-select'
@@ -59,6 +60,11 @@ const ComponentsTooltipRoute = ComponentsTooltipRouteImport.update({
 const ComponentsSpinnerRoute = ComponentsSpinnerRouteImport.update({
   id: '/components/spinner',
   path: '/components/spinner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsProgressRoute = ComponentsProgressRouteImport.update({
+  id: '/components/progress',
+  path: '/components/progress',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsNotificationRoute = ComponentsNotificationRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/components/custom-select': typeof ComponentsCustomSelectRoute
   '/components/forms': typeof ComponentsFormsRoute
   '/components/notification': typeof ComponentsNotificationRoute
+  '/components/progress': typeof ComponentsProgressRoute
   '/components/spinner': typeof ComponentsSpinnerRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/components/custom-select': typeof ComponentsCustomSelectRoute
   '/components/forms': typeof ComponentsFormsRoute
   '/components/notification': typeof ComponentsNotificationRoute
+  '/components/progress': typeof ComponentsProgressRoute
   '/components/spinner': typeof ComponentsSpinnerRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/components/custom-select': typeof ComponentsCustomSelectRoute
   '/components/forms': typeof ComponentsFormsRoute
   '/components/notification': typeof ComponentsNotificationRoute
+  '/components/progress': typeof ComponentsProgressRoute
   '/components/spinner': typeof ComponentsSpinnerRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/components/custom-select'
     | '/components/forms'
     | '/components/notification'
+    | '/components/progress'
     | '/components/spinner'
     | '/components/tooltip'
     | '/components/typography'
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/components/custom-select'
     | '/components/forms'
     | '/components/notification'
+    | '/components/progress'
     | '/components/spinner'
     | '/components/tooltip'
     | '/components/typography'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/components/custom-select'
     | '/components/forms'
     | '/components/notification'
+    | '/components/progress'
     | '/components/spinner'
     | '/components/tooltip'
     | '/components/typography'
@@ -218,6 +230,7 @@ export interface RootRouteChildren {
   ComponentsCustomSelectRoute: typeof ComponentsCustomSelectRoute
   ComponentsFormsRoute: typeof ComponentsFormsRoute
   ComponentsNotificationRoute: typeof ComponentsNotificationRoute
+  ComponentsProgressRoute: typeof ComponentsProgressRoute
   ComponentsSpinnerRoute: typeof ComponentsSpinnerRoute
   ComponentsTooltipRoute: typeof ComponentsTooltipRoute
   ComponentsTypographyRoute: typeof ComponentsTypographyRoute
@@ -275,6 +288,13 @@ declare module '@tanstack/react-router' {
       path: '/components/spinner'
       fullPath: '/components/spinner'
       preLoaderRoute: typeof ComponentsSpinnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/progress': {
+      id: '/components/progress'
+      path: '/components/progress'
+      fullPath: '/components/progress'
+      preLoaderRoute: typeof ComponentsProgressRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components/notification': {
@@ -346,6 +366,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComponentsCustomSelectRoute: ComponentsCustomSelectRoute,
   ComponentsFormsRoute: ComponentsFormsRoute,
   ComponentsNotificationRoute: ComponentsNotificationRoute,
+  ComponentsProgressRoute: ComponentsProgressRoute,
   ComponentsSpinnerRoute: ComponentsSpinnerRoute,
   ComponentsTooltipRoute: ComponentsTooltipRoute,
   ComponentsTypographyRoute: ComponentsTypographyRoute,
