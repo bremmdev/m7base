@@ -15,6 +15,7 @@ import { Route as UtilitiesSpacingAndMarginRouteImport } from './routes/utilitie
 import { Route as UtilitiesFlexRouteImport } from './routes/utilities.flex'
 import { Route as ComponentsTypographyRouteImport } from './routes/components.typography'
 import { Route as ComponentsTooltipRouteImport } from './routes/components.tooltip'
+import { Route as ComponentsSwitchRouteImport } from './routes/components.switch'
 import { Route as ComponentsSpinnerRouteImport } from './routes/components.spinner'
 import { Route as ComponentsProgressRouteImport } from './routes/components.progress'
 import { Route as ComponentsNotificationRouteImport } from './routes/components.notification'
@@ -55,6 +56,11 @@ const ComponentsTypographyRoute = ComponentsTypographyRouteImport.update({
 const ComponentsTooltipRoute = ComponentsTooltipRouteImport.update({
   id: '/components/tooltip',
   path: '/components/tooltip',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsSwitchRoute = ComponentsSwitchRouteImport.update({
+  id: '/components/switch',
+  path: '/components/switch',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsSpinnerRoute = ComponentsSpinnerRouteImport.update({
@@ -120,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/components/notification': typeof ComponentsNotificationRoute
   '/components/progress': typeof ComponentsProgressRoute
   '/components/spinner': typeof ComponentsSpinnerRoute
+  '/components/switch': typeof ComponentsSwitchRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
   '/utilities/flex': typeof UtilitiesFlexRoute
@@ -138,6 +145,7 @@ export interface FileRoutesByTo {
   '/components/notification': typeof ComponentsNotificationRoute
   '/components/progress': typeof ComponentsProgressRoute
   '/components/spinner': typeof ComponentsSpinnerRoute
+  '/components/switch': typeof ComponentsSwitchRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
   '/utilities/flex': typeof UtilitiesFlexRoute
@@ -157,6 +165,7 @@ export interface FileRoutesById {
   '/components/notification': typeof ComponentsNotificationRoute
   '/components/progress': typeof ComponentsProgressRoute
   '/components/spinner': typeof ComponentsSpinnerRoute
+  '/components/switch': typeof ComponentsSwitchRoute
   '/components/tooltip': typeof ComponentsTooltipRoute
   '/components/typography': typeof ComponentsTypographyRoute
   '/utilities/flex': typeof UtilitiesFlexRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/components/notification'
     | '/components/progress'
     | '/components/spinner'
+    | '/components/switch'
     | '/components/tooltip'
     | '/components/typography'
     | '/utilities/flex'
@@ -195,6 +205,7 @@ export interface FileRouteTypes {
     | '/components/notification'
     | '/components/progress'
     | '/components/spinner'
+    | '/components/switch'
     | '/components/tooltip'
     | '/components/typography'
     | '/utilities/flex'
@@ -213,6 +224,7 @@ export interface FileRouteTypes {
     | '/components/notification'
     | '/components/progress'
     | '/components/spinner'
+    | '/components/switch'
     | '/components/tooltip'
     | '/components/typography'
     | '/utilities/flex'
@@ -232,6 +244,7 @@ export interface RootRouteChildren {
   ComponentsNotificationRoute: typeof ComponentsNotificationRoute
   ComponentsProgressRoute: typeof ComponentsProgressRoute
   ComponentsSpinnerRoute: typeof ComponentsSpinnerRoute
+  ComponentsSwitchRoute: typeof ComponentsSwitchRoute
   ComponentsTooltipRoute: typeof ComponentsTooltipRoute
   ComponentsTypographyRoute: typeof ComponentsTypographyRoute
   UtilitiesFlexRoute: typeof UtilitiesFlexRoute
@@ -281,6 +294,13 @@ declare module '@tanstack/react-router' {
       path: '/components/tooltip'
       fullPath: '/components/tooltip'
       preLoaderRoute: typeof ComponentsTooltipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components/switch': {
+      id: '/components/switch'
+      path: '/components/switch'
+      fullPath: '/components/switch'
+      preLoaderRoute: typeof ComponentsSwitchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components/spinner': {
@@ -368,6 +388,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComponentsNotificationRoute: ComponentsNotificationRoute,
   ComponentsProgressRoute: ComponentsProgressRoute,
   ComponentsSpinnerRoute: ComponentsSpinnerRoute,
+  ComponentsSwitchRoute: ComponentsSwitchRoute,
   ComponentsTooltipRoute: ComponentsTooltipRoute,
   ComponentsTypographyRoute: ComponentsTypographyRoute,
   UtilitiesFlexRoute: UtilitiesFlexRoute,

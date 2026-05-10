@@ -39,6 +39,7 @@ m7base provides ready-to-use component classes:
 - **Page Container** - Centered content with max-width (`page-container`)
 - **Progress** - Progress bar (`progress`, `progress-bar`)
 - **Spinner** - Animating spinner for loading states (`spinner` with `medium` and `large` modifiers)
+- **Switch** - Toggle switch (`switch` on a native `checkbox` input; use `role="switch"` for accessibility)
 - **Tooltip** - Hover/focus-triggered tooltips (`tooltip`, `tooltip-trigger`, `tooltip-content`, `top` for positioning)
 
 For detailed examples and usage, visit the [documentation site](https://m7base.bremm.dev).

@@ -47,6 +47,9 @@
         /* Spacing scale (0.25rem increments) */
         --spacing-unit: 0.25rem;
 
+        /* Cubic bezier easing function */
+        --cubic-bezier: cubic-bezier(0.34, 1.56, 0.64, 1);
+
         /* On mobile, scale the spacing unit down to 0.8 * 0.25rem */
         @media (max-width: 768px) {
                 --spacing-unit: calc(0.8 * 0.25rem);

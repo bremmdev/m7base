@@ -349,6 +349,50 @@
     }
 }
 
+/** SWITCH **/
+
+.switch {
+    background-color: var(--color-surface);
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(4rem + 4px);
+    height: calc(2rem + 4px);
+    padding: 2px;
+    border-radius: 100vw;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background-color 0.3s var(--cubic-bezier), border-color 0.3s var(--cubic-bezier);
+
+    &:checked {
+        background-color: var(--color-accent);
+        border-color: var(--color-accent);
+
+        &::after {
+            translate: calc(100% + 4px) 0;
+            transition: translate 0.3s var(--cubic-bezier);
+            background-color: var(--color-foreground-inverted);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        background-color: var(--color-foreground);
+        width: calc(50% - 2px);
+        height: calc(100% - 2px);
+        border-radius: 100vw;
+        translate: 0 0;
+        transition: translate 0.3s var(--cubic-bezier);
+    }
+}
+
 /** TOOLTIP **/
 
 .tooltip {
